@@ -15,10 +15,10 @@ A clone of Retail Site Zara
   Rapkat Amin
 
 # Features: 	
-    User Auth
-		Product Features
-		Categories
-		Shopping Cart
+	User Auth
+	Product Features
+	Categories
+	Shopping Cart
 
   User can browse through the site without logging in 
   Product show will also show an index of other items which are similar in category
