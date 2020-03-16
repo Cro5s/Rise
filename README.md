@@ -10,9 +10,9 @@ A clone of Retail Site Zara
      Rise
 
 # Project Team: 	
-  Jayasree Suryadevara
-  Kadeem Jackson
-  Rapkat Amin
+	  Jayasree Suryadevara
+	  Kadeem Jackson
+	  Rapkat Amin
 
 # Features: 	
 	User Auth
