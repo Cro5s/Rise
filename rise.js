@@ -1,11 +1,19 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
-app.use("/api/users", users);
+const passport = require('passport');
 
-app.get("/", (req, res) => res.send("Hello World"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use("/api/users", users);
+app.get("/", (req, res) => {
+    app.use(passport.initialize());
+    require('./config/passport')(passport);
+});
 
 mongoose
   .connect(db, { useNewUrlParser: true })
