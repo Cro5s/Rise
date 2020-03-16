@@ -29,7 +29,8 @@ A clone of Retail Site Zara
 
 	  Bonus: Swiping through the feature photos
 	  Bonus: Search bar that finds products based on categories searched
-
+	  Bonus: User profile
+	  
 # Technology Used:
 	  MongoDB
 	  Express
