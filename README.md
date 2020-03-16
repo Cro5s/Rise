@@ -30,11 +30,11 @@ A clone of Retail Site Zara
   Bonus: Search bar that finds products based on categories searched
 
 # Technology Used:
-  MongoDB
-  Express
-  React
-  Node.js
-  AWS to host our images
+	  MongoDB
+	  Express
+	  React
+	  Node.js
+	  AWS to host our images
 
 # Backup Ideas:
 	Nextdoor
