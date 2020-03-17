@@ -17,9 +17,9 @@ class LoginForm extends React.Component {
 
   // Once the user has been authenticated, redirect to the Tweets page
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.props.history.push('/tweets');
-    }
+    // if (nextProps.currentUser === true) {
+    //   this.props.history.push('/tweets');
+    // }
 
     // Set or clear errors
     this.setState({errors: nextProps.errors})
@@ -59,9 +59,9 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
+      <div className="login-form-page">
+        <form className="login-form-main" onSubmit={this.handleSubmit}>
+          <div className="login-form-fields">
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}

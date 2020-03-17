@@ -5,9 +5,16 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      fname: '',
+      lname:'',
       email: '',
       password: '',
       password2: '',
+      address: '',
+      zipCode: '',
+      city: '',
+      state: '',
+      phone: '',
       errors: {}
     };
 
@@ -32,9 +39,16 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user = {
+      fname: this.state.fname,
+      lname:this.state.lname,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      address: this.state.address,
+      zipCode: this.state.zipCode,
+      city: this.state.city,
+      state: this.state.state,
+      phone: this.state.phone,
     };
 
     this.props.signup(user, this.props.history); 
@@ -59,6 +73,18 @@ class SignupForm extends React.Component {
           <div className="signup-form">
             <br/>
               <input type="text"
+                value={this.state.fname}
+                onChange={this.update('fname')}
+                placeholder="First Name"
+              />
+            <br/>
+              <input type="text"
+                value={this.state.lname}
+                onChange={this.update('lname')}
+                placeholder="Last Name"
+              />
+            <br/>
+              <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
@@ -74,6 +100,30 @@ class SignupForm extends React.Component {
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
+              />
+            <br/>
+              <input type="text"
+                value={this.state.address}
+                onChange={this.update('address')}
+                placeholder="address"
+              />
+            <br/>
+              <input type="text"
+                value={this.state.zipCode}
+                onChange={this.update('zipCode')}
+                placeholder="zipcode"
+              />
+            <br/>
+              <input type="text"
+                value={this.state.city}
+                onChange={this.update('city')}
+                placeholder="city"
+              />
+            <br/>
+              <input type="text"
+                value={this.state.state}
+                onChange={this.update('state')}
+                placeholder="state"
               />
             <br/>
             <input type="submit" value="Submit" />
