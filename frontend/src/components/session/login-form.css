@@ -1,4 +1,15 @@
-.login-form-page {
+.login-form-container {
+    display: block;
+    flex: 1 0 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 744px;
+    font-family: Neue-Helvetica, Helvetica, Arial, sans-serif;
+    padding-top: 40px;
+}
+.login-form-flex-container {
+    display: flex;
+    flex-direction: row;
     min-height: 425px;
 }
 .login-form-page {
@@ -7,9 +18,78 @@
     padding-right: 80px;
     width: 50%;
 }
+.login-form-title {
+    font-size: 32px;
+    font-stretch: condensed;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 32px;
+    padding-bottom: 60px;
+}
+.login-form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    width: 292px;
+    color: #000;
+    margin-bottom: 12px;
+}
+input {
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    padding-top: 20px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px lightgray;
+}
+input:focus {
+    border: none;
+    border-bottom: solid 2px gray;
+}
+.login-button {
+    margin-top: 40px;
+    background: #000;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 11px 16px;
+    text-align: center;
+    width: 100%;
+    line-height: 20px;
+    letter-spacing: .2px;
+}
 .login-form-register-section {
     box-sizing: border-box;
     margin-bottom: 40px;
     padding-right: 80px;
-    width: 50%;   
+    width: 372px;
+}
+.login-form-register-section > p {
+    padding-top: 20px;
+    font-size: 14px;
+}
+.login-form-register-label {
+    font-size: 32px;
+    font-stretch: 75%;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 32px; 
+    padding-bottom: 20px;
+    font-stretch: condensed;
+}
+.risgister-button {
+    margin-top: 40px;
+    background: #000;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 11px 16px;
+    text-align: center;
+    width: 100%;
+    line-height: 20px;
+    letter-spacing: .2px;
 }
