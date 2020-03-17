@@ -1,0 +1,15 @@
+.login-form-page {
+    min-height: 425px;
+}
+.login-form-page {
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    padding-right: 80px;
+    width: 50%;
+}
+.login-form-register-section {
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    padding-right: 80px;
+    width: 50%;   
+}

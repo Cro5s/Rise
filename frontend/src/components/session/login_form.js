@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -44,6 +45,12 @@ class LoginForm extends React.Component {
     this.props.login(user); 
   }
 
+  // Handle Register button which routes to Signup form
+  handleRegister(e) {
+    e.preventDefault();
+    this.props.history.push("/signup");
+  }
+
   // Render the session errors if there are any
   renderErrors() {
     return(
@@ -59,25 +66,37 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-page">
-        <form className="login-form-main" onSubmit={this.handleSubmit}>
-          <div className="login-form-fields">
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+      <div className="login-form-container">
+        <div className="login-form-page">
+          <form onSubmit={this.handleSubmit}>
+            <div className="login-form-fields">
+              <label className="login-form-title">LOG IN</label>
+                <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+              <br/>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+              <br/>
+              <input className="login-button" type="submit" value="LOG IN" />
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
+        <div className="login-form-register-section">
+          <label className="login-form-register-label">REGISTER</label>
+          <br />
+          <p>If you still don't have a Rise.com account, use this option to access the registration form.</p>
+          <br />
+          <p>Provide your details to make <b>Rise.com</b> purchases easier.</p>
+          <br />
+          <button className="risgister-button" onClick={this.handleRegister}>CREATE ACCOUNT</button>
+        </div>
       </div>
     );
   }

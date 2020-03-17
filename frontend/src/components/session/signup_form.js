@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -69,20 +70,15 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br/>
-              <input type="text"
-                value={this.state.fName}
-                onChange={this.update('fName')}
-                placeholder="First Name"
-              />
-            <br/>
-              <input type="text"
-                value={this.state.lName}
-                onChange={this.update('lName')}
-                placeholder="Last Name"
-              />
+        <div className="signup-form">
+          <header>
+              <h1 class="head">Write your personal details</h1>
+          </header>
+          <div>
+
+
+          </div>
+          <form onSubmit={this.handleSubmit}>
             <br/>
               <input type="text"
                 value={this.state.email}
@@ -103,21 +99,33 @@ class SignupForm extends React.Component {
               />
             <br/>
               <input type="text"
+                value={this.state.fName}
+                onChange={this.update('fName')}
+                placeholder="Name"
+              />
+            <br/>
+              <input type="text"
+                value={this.state.lName}
+                onChange={this.update('lName')}
+                placeholder="Last Name"
+              />
+            <br/>
+              <input type="text"
                 value={this.state.address}
                 onChange={this.update('address')}
-                placeholder="address"
+                placeholder="Address"
               />
             <br/>
               <input type="text"
                 value={this.state.zipCode}
                 onChange={this.update('zipCode')}
-                placeholder="zipcode"
+                placeholder="Zip Code"
               />
             <br/>
               <input type="text"
                 value={this.state.city}
                 onChange={this.update('city')}
-                placeholder="city"
+                placeholder="City/Town"
               />
             <br/>
               <input type="text"
@@ -132,10 +140,10 @@ class SignupForm extends React.Component {
                 placeholder="phone"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Create Account" />
             {this.renderErrors()}
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }
