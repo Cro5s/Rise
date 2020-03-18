@@ -13,7 +13,6 @@ class MainPage extends React.Component {
         <div className="logo-container">
           <Link className="logo" to="/">RISE</Link>
         </div>
-        <h1>{this.props.currentUserName}</h1>
 
         <footer>
           Copyright &copy; 2020 Rise

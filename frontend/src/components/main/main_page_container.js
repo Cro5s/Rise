@@ -4,7 +4,7 @@ import MainPage from "./main_page";
 
 const mapStateToProps = state => {
   return {
-    currentUserName: state.currentUser.fName,
+    // currentUserName: state.currentUser.fName,
   };
 };
 
