@@ -3,8 +3,15 @@ import { receiveCurrentUser } from "../../actions/session_actions";
 import MainPage from "./main_page";
 
 const mapStateToProps = state => {
-  return {
-    currentUserName: state.currentUser.fName,
+  if (state.session.user) {
+    return {
+      currentUserName: state.session.user.fName,   
+      currentUser: state.session.user,
+    };
+  } else {
+    return {
+      currentUser: state.session.user,
+    };
   };
 };
 
