@@ -3,7 +3,7 @@
     flex: 1 0 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 744px;
+    max-width: 860px;
     font-family: Neue-Helvetica, Helvetica, Arial, sans-serif;
     font-size: 0.8em;
     padding-top: 40px;
@@ -20,8 +20,8 @@
     width: 50%;
 }
 .login-form-title {
-    font-size: 32px;
-    font-stretch: extra-condensed;
+    font-size: 40px;
+    font-stretch: 75% !important;
     font-weight: 700;
     letter-spacing: 0.4px;
     line-height: 32px;
@@ -30,7 +30,7 @@
 .login-form-fields {
     display: flex;
     flex-wrap: wrap;
-    width: 292px;
+    width: 350px;
     color: #000;
     margin-bottom: 12px;
 }
@@ -40,7 +40,7 @@ input {
     letter-spacing: 0.2px;
     line-height: 16px;
     padding-top: 20px;
-    font-size: 16px;
+    font-size: 20px;
     padding: 10px;
     border: none;
     border-bottom: solid 2px lightgray;
@@ -50,10 +50,10 @@ input:focus {
     border-bottom: solid 2px gray;
 }
 .login-button {
-    margin-top: 40px;
+    margin-top: 60px;
     background: #000;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     cursor: pointer;
     padding: 11px 16px;
@@ -67,16 +67,16 @@ input:focus {
     box-sizing: border-box;
     margin-bottom: 40px;
     padding-right: 80px;
-    width: 372px;
+    width: 430px;
 }
 .login-form-register-section p {
     padding-top: 20px;
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
 }
 .login-form-register-label {
-    font-size: 32px;
-    font-stretch: 75%;
+    font-size: 40px;
+    font-stretch: 75% !important;
     font-weight: 700;
     letter-spacing: 0.4px;
     line-height: 32px; 
@@ -84,10 +84,10 @@ input:focus {
     font-stretch: extra-condensed;
 }
 .risgister-button {
-    margin-top: 40px;
+    margin-top: 30px;
     background: #000;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     padding: 11px 16px;
