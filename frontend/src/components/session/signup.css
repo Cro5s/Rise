@@ -13,7 +13,8 @@
     min-height: 530px;
     
     /* border: 1px solid green; */
-    /* padding: 5px; */
+    padding: 5px;
+
     max-width: 900px;
 }
 
@@ -41,6 +42,9 @@
 
 .form--field > * {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
 }
 
 .form--field > div > input, .stateCode {
@@ -50,6 +54,8 @@
     border-left-style: hidden;
     margin-bottom: 40px;
     margin-right: 35px;
+
+    /* border: 1px solid red; */
 }
 
 .stateCode {
@@ -66,12 +72,20 @@
     border-bottom: 2px solid black;
 }
 
+.single-input > div > input {
+    width: 290px;
+    margin-bottom: 40px;
+    /* border: 1px solid red; */
+}
+
 .create-account-button-div {
-    width: 312px;
+    width: 360px;
     /* border: 1px solid red; */
 }
 
 .create-account-button {
+    display: flex;
+    justify-content: center;
     border-bottom: transparent;
     cursor: pointer;
     background-color: black;
