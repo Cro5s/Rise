@@ -1,5 +1,61 @@
+.nav-bar-container {
+  display: flex;
+  align-items: center;
+
+  /* border: 1px solid red; */
+}
+
 .navbar-icon {
   margin: 40px 20px 20px 20px;
   font-size: 24px;
   font-weight: lighter;
+}
+
+.login-link-container {
+  justify-content: space-between;
+
+  /* border: 1px solid blue; */
+}
+
+.logo-container {
+  margin-top: 10px;
+
+  /* border: 1px solid orange; */
+}
+
+.logo-link {
+  justify-content: space-between;
+
+  /* border: 1px solid blue; */
+}
+
+.logo {
+  font-size: 70px;
+
+  /* border: 1px solid lightblue; */
+}
+
+.status-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.user-name {
+  font-weight: lighter;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  /* border: 1px solid purple; */
+}
+
+.login-link {
+  font-size: 16px;
+}
+
+.shopping-cart-icon {
+  font-size: 30px;
+  margin: 20px;
+  
 }

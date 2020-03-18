@@ -1,9 +1,27 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { receiveCurrentUser, logout } from "../../actions/session_actions";
 import NavBar from './navbar';
 
-const mapStateToProps = state => ({
-  loggedIn: state.session.isAuthenticated
-});
+const mapStateToProps = state => {
+   if (state.session.user) {
+    return {
+      currentUserName: state.session.user.fName,   
+      currentUser: state.session.user,
+      loggedIn: state.session.isAuthenticated
+    };
+  } else {
+    return {
+      currentUser: state.session.user,
+      loggedIn: state.session.isAuthenticated
+    };
+  };
+};
 
-export default connect(mapStateToProps, { logout })(NavBar);
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(logout()),
+    receiveCurrentUser: currentUser => dispatch(receiveCurrentUser(currentUser))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
