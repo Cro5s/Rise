@@ -51,7 +51,7 @@ class SignupForm extends React.Component {
       state: this.state.state,
       phone: this.state.phone,
     };
-    console.log("user in signup", user);
+    // console.log("user in signup", user);
     this.props.signup(user, this.props.history); 
   }
 
