@@ -5,6 +5,7 @@
     margin-right: auto;
     max-width: 744px;
     font-family: Neue-Helvetica, Helvetica, Arial, sans-serif;
+    font-size: 0.8em;
     padding-top: 40px;
 }
 .login-form-flex-container {
@@ -20,7 +21,7 @@
 }
 .login-form-title {
     font-size: 32px;
-    font-stretch: condensed;
+    font-stretch: extra-condensed;
     font-weight: 700;
     letter-spacing: 0.4px;
     line-height: 32px;
@@ -59,7 +60,8 @@ input:focus {
     text-align: center;
     width: 100%;
     line-height: 20px;
-    letter-spacing: .2px;
+    letter-spacing: 0.2px;
+    border: solid 2px black;
 }
 .login-form-register-section {
     box-sizing: border-box;
@@ -67,9 +69,10 @@ input:focus {
     padding-right: 80px;
     width: 372px;
 }
-.login-form-register-section > p {
+.login-form-register-section p {
     padding-top: 20px;
-    font-size: 14px;
+    font-size: 16px;
+    width: 100%;
 }
 .login-form-register-label {
     font-size: 32px;
@@ -78,7 +81,7 @@ input:focus {
     letter-spacing: 0.4px;
     line-height: 32px; 
     padding-bottom: 20px;
-    font-stretch: condensed;
+    font-stretch: extra-condensed;
 }
 .risgister-button {
     margin-top: 40px;
@@ -92,4 +95,5 @@ input:focus {
     width: 100%;
     line-height: 20px;
     letter-spacing: .2px;
+    border: solid 2px black;
 }
