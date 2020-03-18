@@ -36,7 +36,7 @@ class NavBar extends React.Component {
 
     return (
       <div className="nav-bar-container">
-        <div>
+        <div className="navbar-icon-container">
           <div className="navbar-icon">
             <i className="fas fa-bars"></i>
           </div>
@@ -45,9 +45,9 @@ class NavBar extends React.Component {
               <ul className="category-menu">
                 <li className="category-menu-item-1" >
                   <Link to="/woman" className="category-link-1">WOMAN</Link>
-                  <li class="menu-item--is-divider" role="separator"/>
-                  <li class="menu-item--is-divider" role="separator" />
                   <ul className="menu-item-1-subitems">
+                    <li className="menu-item--is-divider" role="separator"/>
+                    <li className="menu-item--is-divider" role="separator" />
                     <li className="category-menu-item-1-1">
                       <Link to="/woman/jackets" className="category-link-1-1">JACKETS</Link>
                     </li>
@@ -64,9 +64,9 @@ class NavBar extends React.Component {
                 </li>
                 <li className="category-menu-item-2" >
                   <Link to="/men" className="category-link-2">MEN</Link>
-                  <li class="menu-item--is-divider" role="separator" />
-                  <li class="menu-item--is-divider" role="separator" />
                   <ul className="menu-item-2-subitems">
+                    <li className="menu-item--is-divider" role="separator" />
+                    <li className="menu-item--is-divider" role="separator" />
                     <li className="category-menu-item-2-1">
                       <Link to="/men/jackets" className="category-link-2-1">JACKETS</Link>
                     </li>
@@ -82,10 +82,10 @@ class NavBar extends React.Component {
                   </ul>
                 </li>
                 <li className="category-menu-item-3" >
-                  <Link to="/kids" className="category-link-3">WOMAN</Link>
-                  <li class="menu-item--is-divider" role="separator" />
-                  <li class="menu-item--is-divider" role="separator" />
+                  <Link to="/kids" className="category-link-3">KIDS</Link>
                   <ul className="menu-item-3-subitems">
+                    <li className="menu-item--is-divider" role="separator" />
+                    <li className="menu-item--is-divider" role="separator" />
                     <li className="category-menu-item-3-1">
                       <Link to="/kids/jackets" className="category-link-3-1">JACKETS</Link>
                     </li>

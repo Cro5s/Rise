@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 
-.navbar-icon:hover .category-menu-navbar{
+.navbar-icon-container:hover .category-menu-navbar{
     display: block;
     background-color: white;
     opacity: 1;
@@ -21,7 +21,45 @@
 .category-menu-navbar {
   display: none;
   position: absolute;
-  width: 240px;
+  width: 260px;
+  padding-left: 20px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: white;
+}
+.category-menu li{
+  font-size: 40px;
+  padding: 10px;
+}
+
+.category-menu-item-1:hover .menu-item-1-subitems {
+  display: block;
+}
+.menu-item-1-subitems {
+  display: none;
+}
+.category-menu-item-2:hover .menu-item-2-subitems {
+  display: block;
+}
+.menu-item-2-subitems {
+  display: none;
+}
+.category-menu-item-3:hover .menu-item-3-subitems {
+  display: block;
+}
+.menu-item-3-subitems {
+  display: none;
+}
+.menu-item-1-subitems li{
+  font-size: 20px;
+}
+
+.menu-item-2-subitems li{
+  font-size: 20px;
+}
+
+.menu-item-3-subitems li{
+  font-size: 20px;
 }
 
 .login-link-container {
@@ -43,8 +81,7 @@
 }
 
 .logo {
-  font-size: 70px;
-
+  font-size: 90px !important;
   /* border: 1px solid lightblue; */
 }
 
@@ -70,5 +107,4 @@
 .shopping-cart-icon {
   font-size: 30px;
   margin: 20px;
-  
 }
