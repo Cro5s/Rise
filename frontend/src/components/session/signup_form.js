@@ -52,8 +52,7 @@ class SignupForm extends React.Component {
       phone: this.state.phone,
     };
     console.log("user in signup", user);
-    this.props.signup(user, this.props.history)
-    .then((user) => this.props.login(user)); 
+    this.props.signup(user, this.props.history); 
   }
 
   renderErrors() {
