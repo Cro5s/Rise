@@ -5,8 +5,9 @@
 
 .background {
   background-image: url(./assets/images/landscape_0.jpg);
- background-size: cover;
- background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 .main-page-nav {
@@ -20,7 +21,7 @@
 }
 
 .main-page {
-  padding: 200px 0px 200px 0px;
+  padding: 300px 0px 300px 0px;
   /* height: 100%; */
   /* width: 100%; */
 }
@@ -74,7 +75,7 @@
   margin-top: 300px;
 }
 
-.main-page-footer {
+/* .main-page-footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -96,4 +97,4 @@
 
 .github {
 
-}
+} */

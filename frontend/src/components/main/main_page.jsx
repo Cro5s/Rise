@@ -6,9 +6,9 @@ import landscape0 from "./assets/images/landscape_0(1).jpg"
 class MainPage extends React.Component {
   render() {
     return (
-      <div className="main-page-container">
-        <div className="main-page">
-          <div>
+      <div className="background">
+        <div className="main-page-container">
+          <div className="main-page">
             <div className="category-page">
               <label className="left-label">MAN</label>
               <div 
@@ -41,15 +41,15 @@ class MainPage extends React.Component {
           </div>
         </div>
 
-        <footer className="main-page-footer">
-          {/* Copyright &copy; 2020 Rise */}
+        {/* <footer className="main-page-footer">
+          Copyright &copy; 2020 Rise 
           <div className="footer-link-1">
             <Link className="linkedin" to="/Socials">LinkedIn</Link>
           </div>
           <div className="footer-link-2">
             <Link className="github" to="/Socials">GitHub</Link>
           </div>
-        </footer>
+        </footer> */}
       </div>
     );
   }
