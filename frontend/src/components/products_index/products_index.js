@@ -9,20 +9,24 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     this.props.fetchProducts("kids");
   }
 
   render() {
-    debugger;
     if (this.props.products.length === 0) return null;
 
-    const productsLists = this.props.products.map(product => {
-      return ( <li key={product.id}><img src={product.images[0]}/></li>);
+    const productsLists = this.props.products.map((product, i) => {
+      return ( <li key={i}><img src={product.images[0]}/></li>);
     });
 
     return (
-      <><div className="index-page-main-div">{productsLists}</div></>
+      <>
+        <div className="index-page-main-div">
+          <ul>
+            {productsLists}
+          </ul>
+        </div>
+      </>
     )
   }
 }
