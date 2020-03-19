@@ -8,7 +8,7 @@ class MainPage extends React.Component {
     return (
       <div className="main-page-container">
         <div className="main-page">
-          <div className="background">
+          <div>
             <div className="category-page">
               <label className="left-label">MAN</label>
               <div 

@@ -5,9 +5,8 @@
 
 .background {
   background-image: url(./assets/images/landscape_0.jpg);
-  width: 100%;
-  height: 100%;
-  border-image-repeat: stretch;
+ background-size: cover;
+ background-repeat: no-repeat;
 }
 
 .main-page-nav {
