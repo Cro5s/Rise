@@ -23,6 +23,9 @@ const App = () => (
             <Route exact path="/product/:id" component={ProductShowContainer} />
             <Route exact path="/:category" component={ProductIndexContainer} />
             <Route exact path="/:category/:product_type" component={ProductIndexContainer} />
+            <Route exact path="/product/:id" component={ProductShowContainer} />
+            <Route exact path="/:category" component={ProductIndexContainer} />
+            <Route exact path="/:category/:product_type" component={ProductIndexContainer} />
         </Switch>
         <Footer />
     </div>

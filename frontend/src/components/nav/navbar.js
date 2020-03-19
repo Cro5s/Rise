@@ -6,6 +6,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
+  
   }
 
   logoutUser(e) {
