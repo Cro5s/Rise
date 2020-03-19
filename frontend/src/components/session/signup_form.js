@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './signup.css';
-import NavBarContainer from '../nav/navbar_container';
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -70,7 +69,6 @@ class SignupForm extends React.Component {
   render() {
     return (
       <>
-        <NavBarContainer />
         <div className="signup-page">
           <div className="signup-form-container">
             <header>
