@@ -3,11 +3,11 @@ import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/product_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
   const id = ownProps.match.params.id;
 
   return {
-    product: state.products[id],
+    product: state.product,
+    id,
   };
 };
 

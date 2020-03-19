@@ -6,12 +6,10 @@ import {
 
 export default function (state = {}, action) {
   Object.freeze(state);
-  let newState = Object.assign({}, state);
 
   switch (action.type) {
     case RECEIVE_PRODUCT:
-      newState[action.product.id] = action.product;
-      return newState;
+      return action.product;
     case RECEIVE_PRODUCTS:
       return action.products;
     case RECEIVE_PRODUCT_TYPES:

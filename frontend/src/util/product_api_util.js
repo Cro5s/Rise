@@ -2,12 +2,12 @@ import axios from 'axios';
 
 //Category index page
 export const getProducts = (category) => {
-    return axios.get(`/api/products/${category}`);
+    return axios.get(`/api/products/${category}/category`);
 };
 
 //Products index page
 export const getProductTypes = (category, productType) => {
-    return axios.get(`/api/products/${category}/${productType}`);
+    return axios.get(`/api/products/${category}/category/${productType}`);
 };
 
 //Product show page
