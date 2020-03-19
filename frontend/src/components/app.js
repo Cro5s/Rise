@@ -6,6 +6,7 @@ import "./reset.css";
 import MainPageContainer from './main/main_page_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import ProductIndexContainer from './products_index/products_index_container';
 
 const App = () => (
     <div className="background">
@@ -14,6 +15,8 @@ const App = () => (
             <Route exact path="/" component={MainPageContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <Route exact path="/:category" component={ProductIndexContainer} />
+            <Route exact path="/:category/:product_type" component={ProductIndexContainer} />
             {/* <Route exact path="/Socials" component={SocialLinksContainer} /> */}
         </Switch>
     </div>
