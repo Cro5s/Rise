@@ -14,6 +14,10 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
+  update(field){
+
+  } 
+
   render() {
     const { currentUserName } = this.props;
 
@@ -95,6 +99,9 @@ class NavBar extends React.Component {
             <Link className="logo-link" to="/">
               <h1 className="logo">RISE</h1>
             </Link>
+          </div>
+          <div className="search-bar">
+              {/* <input type="text" placeholder="Search..." onChange={update(search)}/> */}
           </div>
           <div className="status-container">
             <div className="login-status-container">

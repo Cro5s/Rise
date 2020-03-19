@@ -9,10 +9,10 @@ const Footer = () => {
             <footer className="main-page-footer">
                 {/* Copyright &copy; 2020 Rise */}
                 <div className="footer-link-1">
-                    <Link className="linkedin" to="/Socials"><i class="fab fa-linkedin fa-3x"></i></Link>
+                    <Link className="linkedin" to="/Socials"><i className="fab fa-linkedin fa-3x"></i></Link>
                 </div>
                 <div className="footer-link-2">
-                    <Link className="github" to="/Socials"><i class="fab fa-github fa-3x"></i></Link>
+                    <Link className="github" to="/Socials"><i className="fab fa-github fa-3x"></i></Link>
                 </div>
             </footer>
         </div>
