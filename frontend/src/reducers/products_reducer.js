@@ -10,7 +10,7 @@ export default function (state = {}, action) {
 
   switch (action.type) {
     case RECEIVE_PRODUCT:
-      newState[action.product.data.id] = action.product.data;
+      newState[action.product.id] = action.product;
       return newState;
     case RECEIVE_PRODUCTS:
       return action.products;
