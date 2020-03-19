@@ -117,7 +117,7 @@ class NavBar extends React.Component {
           <div className="status-container">
             <div className="login-status-container">
             { 
-              currentUser.id ? <h3 className="user-name">{currentUserName}</h3> : <Link className="login-link" to="/login">LOG IN</Link>
+              this.props.loggedIn ? <h3 className="user-name">{currentUserName}</h3> : <Link className="login-link" to="/login">LOG IN</Link>
             }
             </div>
             <div 
