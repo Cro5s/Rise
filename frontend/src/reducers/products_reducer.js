@@ -10,12 +10,12 @@ export default function productsReducer(state = {}, action) {
 
   switch (action.type) {
     case RECEIVE_PRODUCT:
-      newState[action.product.id] = action.product;
+      newState[action.product.data.id] = action.product.data;
       return newState;
     case RECEIVE_PRODUCTS:
-      return action.products;
+      return action.products.data;
     case RECEIVE_PRODUCT_TYPES:
-      return action.products;
+      return action.products.data;
     default:
       return state;
   };
