@@ -14,7 +14,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { currentUser, currentUserName } = this.props;
+    const { currentUserName } = this.props;
 
     return (
       <div className="nav-bar-container">

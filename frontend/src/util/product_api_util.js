@@ -14,4 +14,3 @@ export const getProductTypes = (category, productType) => {
 export const getProduct = (Id) => {
     return axios.get(`/api/products/${Id}`);
 };
-

@@ -6,12 +6,10 @@ const mapStateToProps = state => {
    if (state.session.user) {
     return {
       currentUserName: state.session.user.fName,   
-      currentUser: state.session.user,
-      loggedIn: state.session.isAuthenticated
+      loggedIn: state.session.isAuthenticated,
     };
   } else {
     return {
-      currentUser: state.session.user,
       loggedIn: state.session.isAuthenticated
     };
   };
