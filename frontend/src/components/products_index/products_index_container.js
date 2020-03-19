@@ -5,10 +5,6 @@ import ProductIndex from './products_index';
 const mapStateToProps = (state, ownProps) => {
   // debugger;
   let products = Object.values(state.products);
-  if (products.length === 2) {
-    products.shift();
-    products.shift();
-  }
 
   return {
     products
