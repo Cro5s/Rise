@@ -9,12 +9,10 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     this.props.fetchProducts("kids");
   }
 
   render() {
-    debugger;
     if (this.props.products.length === 0) return null;
 
     const productsLists = this.props.products.map(product => {
