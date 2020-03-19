@@ -5,7 +5,7 @@ import "./navbar.css";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    // this.logoutUser = this.logoutUser.bind(this);
+    this.logoutUser = this.logoutUser.bind(this);
     // this.getLinks = this.getLinks.bind(this);
   }
 
@@ -52,7 +52,7 @@ class NavBar extends React.Component {
                       <Link to="/woman/jackets" className="category-link-1-1">JACKETS</Link>
                     </li>
                     <li className="category-menu-item-1-2">
-                      <Link to="/woman/shirts" className="category-link-1-2">SHIRTS</Link>
+                      <Link to="/woman/shirts" className="category-link-1-2">TOPS</Link>
                     </li>
                     <li className="category-menu-item-1-3">
                       <Link to="/woman/pants" className="category-link-1-3">PANTS</Link>
@@ -101,6 +101,9 @@ class NavBar extends React.Component {
                   </ul>
                 </li>
               </ul>
+              {
+                this.props.loggedIn ? <button className="logout-link" onClick={this.logoutUser}>Logout</button> : null
+              }
             </nav>
           </div>
           {/* { this.getLinks() } */}
