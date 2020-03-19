@@ -2,9 +2,9 @@ import {
   RECEIVE_PRODUCTS, 
   RECEIVE_PRODUCT,  
   RECEIVE_PRODUCT_TYPES
-} from "../actions/products_actions";
+} from "../actions/product_actions";
 
-export default function productsReducer(state = {}, action) {
+export default function (state = {}, action) {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
@@ -13,9 +13,9 @@ export default function productsReducer(state = {}, action) {
       newState[action.product.data.id] = action.product.data;
       return newState;
     case RECEIVE_PRODUCTS:
-      return action.products.data;
+      return action.products;
     case RECEIVE_PRODUCT_TYPES:
-      return action.products.data;
+      return action.products;
     default:
       return state;
   };
