@@ -5,10 +5,11 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const passport = require('passport');
+const products = require("./routes/api/products");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use("/api/products", products);
 app.use("/api/users", users);
 app.get("/", (req, res) => {
     app.use(passport.initialize());
