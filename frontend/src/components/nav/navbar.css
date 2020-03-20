@@ -1,7 +1,6 @@
 .nav-bar-container {
   display: flex;
   align-items: center;
-  /* border: 1px solid red; */
 }
 
 .navbar-icon {
@@ -28,7 +27,7 @@
   background-color: white;
 }
 .category-menu li{
-  font-size: 40px;
+  font-size: 44px;
   padding: 10px;
 }
 
@@ -64,25 +63,18 @@
 
 .login-link-container {
   justify-content: space-between;
-
-  /* border: 1px solid blue; */
 }
 
 .logo-container {
   margin-top: 10px;
-
-  /* border: 1px solid orange; */
 }
 
 .logo-link {
   justify-content: space-between;
-
-  /* border: 1px solid blue; */
 }
 
 .logo {
   font-size: 90px !important;
-  /* border: 1px solid lightblue; */
 }
 
 .status-container {
@@ -96,8 +88,6 @@
   font-weight: lighter;
   font-size: 16px;
   text-transform: uppercase;
-
-  /* border: 1px solid purple; */
 }
 
 .login-link {
@@ -115,4 +105,17 @@
   font-size: 30px;
   margin: 20px;
   padding-right: 10px;
+}
+
+/* Style the search box inside the navigation bar */
+.search-bar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+}
+
+.search-button {
+  font-size: 24px;
 }

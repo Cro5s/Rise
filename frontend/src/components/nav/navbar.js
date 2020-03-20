@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import SearchBarContainer from '../search/search_bar_container';
 import "./navbar.css";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
-  
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   logoutUser(e) {
@@ -14,9 +16,10 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  update(field){
+  handleSearch(e) {
+    e.preventDefault();
 
-  } 
+  }
 
   render() {
     const { currentUserName } = this.props;
@@ -101,7 +104,10 @@ class NavBar extends React.Component {
             </Link>
           </div>
           <div className="search-bar">
-              {/* <input type="text" placeholder="Search..." onChange={update(search)}/> */}
+              <button 
+                className="search-button"
+                onClick={this.handleSearch}
+              >SEARCH  _________________</button>
           </div>
           <div className="status-container">
             <div className="login-status-container">
