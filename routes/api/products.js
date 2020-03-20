@@ -16,8 +16,10 @@ router.get('/:category/category', (req, res) => {
 router.get('/:category/category/:product_type', (req, res) => {
   const category = req.params.category
   const product_type = req.params.product_type
-  Product.find({ "category": category }, { "product_type": product_type })
-    .then(products => res.json(products))
+  Product.find({ "category": category, "product_type": product_type })
+    .then(products => {
+      res.json(products);
+    })
     .catch(err => res.status(404).json({
       noProductFound: 'No product found'
     }));

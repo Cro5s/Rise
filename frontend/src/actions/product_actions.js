@@ -11,10 +11,12 @@ export const receiveProducts = products => {
   }
 };
 
-export const receiveProductTypes = products => ({
-  type: RECEIVE_PRODUCT_TYPES,
-  products
-});
+export const receiveProductTypes = products => {
+  return {
+    type: RECEIVE_PRODUCT_TYPES,
+    products
+  }
+};
 
 export const receiveProduct = product => {
   console.log(product);
