@@ -6,6 +6,7 @@ const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const passport = require('passport');
 const products = require("./routes/api/products");
+const cart_items = require("./routes/api/cart_items");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
   app.use(passport.initialize());
   require('./config/passport')(passport);
 });
+app.use('/api/cart_items', cart_items);
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
