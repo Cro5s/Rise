@@ -14,7 +14,6 @@ import ProductIndexContainer from './products_index/products_index_container';
 const App = () => (
     <div>
         <NavBarContainer />
-        
         <Switch>
             <Route exact path="/" component={MainPageContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />

@@ -9,6 +9,7 @@ export default function (state = {}, action) {
 
   switch (action.type) {
     case RECEIVE_PRODUCT:
+      // debugger;
       return action.product;
     case RECEIVE_PRODUCTS:
       return action.products;

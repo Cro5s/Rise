@@ -37,10 +37,11 @@ export const fetchProductTypes = (category, productType) => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const fetchProduct = id => dispatch => (
+export const fetchProduct = id => dispatch => {
   getProduct(id)
-    .then(res => {
+  .then(res => {
+    // debugger;
       dispatch(receiveProduct(res.data))
     })
     .catch(err => console.log(err))
-);
+};
