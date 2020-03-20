@@ -19,7 +19,6 @@ export const receiveProductTypes = products => {
 };
 
 export const receiveProduct = product => {
-  console.log(product);
 
   return {
     type: RECEIVE_PRODUCT,
