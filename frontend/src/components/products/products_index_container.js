@@ -6,10 +6,15 @@ const mapStateToProps = (state, ownProps) => {
   const category = ownProps.match.params.category;
   const product_type = ownProps.match.params.product_type;
   const products = Object.values(state.products);
+  let something = false;
+  if (products.length === 10) {
+    something = true;
+  }
   return {
     products,
     category,
-    product_type
+    product_type,
+    something
   };
 };
 

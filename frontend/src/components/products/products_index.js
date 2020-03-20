@@ -38,16 +38,20 @@ class ProductIndex extends React.Component {
 
   render() {
     if (this.props.products.length === 0) return null;
+    if (this.props.something) return null;
     const { category, product_type, products } = this.props;
+
     let leftProducts = [];
     let rightProducts = [];
+    
     products.forEach((product, i) => {
-      if (i % 2 == 0) {
+      if (i % 2 === 0) {
         leftProducts.push(product);
       } else {
         rightProducts.push(product);
       }
     })
+    
 
     const productsListsLeft = leftProducts.map((product, i) => {
       const image = product.images[Math.floor(Math.random() * product.images.length)];
@@ -57,11 +61,11 @@ class ProductIndex extends React.Component {
 
             <div className="products--index--img-div">
               <Link to={`/product/${product._id}`} >
-                <img className="products-index-img" src={image}/> 
+                <img className="products-index-img" src={image} alt={product.product_name}/> 
               </Link> 
             </div>
             <Link to={`/product/${product._id}`} >
-              <strong className="product--name"> {product.product_name} </strong>
+              <strong className="product--name">{product.product_name}</strong>
             </Link>
             <strong> {`${product.price}0 USD`} </strong>
           </div>
@@ -77,13 +81,13 @@ class ProductIndex extends React.Component {
 
             <div className="products--index--img-div">
               <Link to={`/product/${product._id}`} >
-                <img className="products-index-img" src={image}/> 
+                <img className="products-index-img" src={image} alt={product.product_name}/> 
               </Link> 
             </div>
             <Link to={`/product/${product._id}`} >
-              <strong className="product--name"> {product.product_name} </strong>
+              <strong className="product--name">{product.product_name}</strong>
             </Link> 
-            <strong> {`${product.price}0 USD`} </strong>
+            <strong>{`${product.price}0 USD`}</strong>
           </div>
         </li>
       );
