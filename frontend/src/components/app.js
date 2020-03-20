@@ -9,12 +9,11 @@ import SignupFormContainer from './session/signup_form_container';
 import Footer from './footer/footer';
 import SocialLinks from './footer/social_links';
 import ProductShowContainer from "./products/product_show_container";
-import ProductIndexContainer from './products_index/products_index_container';
+import ProductIndexContainer from './products/products_index_container';
 
 const App = () => (
     <div>
         <NavBarContainer />
-        
         <Switch>
             <Route exact path="/" component={MainPageContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />

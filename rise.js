@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use("/api/products", products);
 app.use("/api/users", users);
 app.get("/", (req, res) => {
-    app.use(passport.initialize());
-    require('./config/passport')(passport);
+  app.use(passport.initialize());
+  require('./config/passport')(passport);
 });
 
 mongoose
