@@ -12,15 +12,6 @@ const mapStateToProps = (state = {}, ownProps) => {
   };
 };
 
-// const mapStateToProps = (state, ownProps) => {
-//   // const id = ownProps.match.params.id;
-//   debugger;
-//   return {
-//     product: state.product,
-//     id: "5e73039a1c9d440000ade78e",
-//   };
-// };
-
 const mapDispatchToProps = dispatch => {
   return {
     fetchProduct: id => dispatch(fetchProduct(id)),

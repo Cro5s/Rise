@@ -9,6 +9,7 @@ class ProductShow extends React.Component {
       product: this.props.product, 
       isLoaded: false
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +24,11 @@ class ProductShow extends React.Component {
     // .then(res => {this.setState(
       //   {isLoaded: true }
       // )});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
   }
 
   render() {
@@ -41,7 +47,6 @@ class ProductShow extends React.Component {
     if (price) price = price.toFixed(2);
 
     if (this.state.isLoaded) {
-      console.log(this.state.isLoaded);
       return (
         <div className="main-container">
           <div className="left-container">
@@ -50,7 +55,7 @@ class ProductShow extends React.Component {
                 images.map((image, idx) => {
                   return (
                     <li className="image" key={idx}>
-                      <img src={image}/>
+                      <img alt={product_name} src={image}/>
                     </li>
                   );
                 })
@@ -58,26 +63,28 @@ class ProductShow extends React.Component {
             </ul>
           </div>
           <div className="right-container">
-            <div className="product-name">{product_name}</div>
+            <h3 className="product-name">{product_name}</h3>
             <div className="price-container">
               <div className="price">{price}</div>
               <div className="currency-type">USD</div>
             </div>
             <div className="description">{description}</div>
-            <div className="quantity">
-              {
-                quantity > 0 ? <ul className="sizes">
-                  {
-                    size.map((s, idx) => {
-                      return (
-                        <li className="size" key={idx}>{s}</li>
-                      );
-                    })
-                  }
-                </ul> : <h3 className="sold-out">SOLD OUT</h3>
-              }
-            </div>
-            <button className="add-button">ADD</button>
+            <form className="cart-form" onSubmit={this.handleSubmit}>
+              <div className="quantity">
+                {
+                  quantity > 0 ? <ul className="sizes">
+                    {
+                      size.map((s, idx) => {
+                        return (
+                          <li className="size" key={idx}>{s}</li>
+                        );
+                      })
+                    }
+                  </ul> : <h3 className="sold-out">SOLD OUT</h3>
+                }
+              </div>
+              <button className="add-button">ADD</button>
+            </form>
           </div>
         </div>
       );
