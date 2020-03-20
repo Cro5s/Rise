@@ -3,7 +3,7 @@ import { fetchProducts, fetchProductTypes } from '../../actions/product_actions'
 import ProductIndex from './products_index';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
+  // debugger;
   const category= ownProps.match.params.category;
   let products = Object.values(state.products);
 
