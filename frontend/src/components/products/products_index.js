@@ -38,7 +38,7 @@ class ProductIndex extends React.Component {
 
   render() {
     if (this.props.products.length === 0) return null;
-    if (this.props.something) return null;
+    if (this.props.backFromShowPage) return null;
     const { category, product_type, products } = this.props;
 
     let leftProducts = [];

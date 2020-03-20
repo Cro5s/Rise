@@ -6,15 +6,15 @@ const mapStateToProps = (state, ownProps) => {
   const category = ownProps.match.params.category;
   const product_type = ownProps.match.params.product_type;
   const products = Object.values(state.products);
-  let something = false;
+  let backFromShowPage = false;
   if (products.length === 10) {
-    something = true;
+    backFromShowPage = true;
   }
   return {
     products,
     category,
     product_type,
-    something
+    backFromShowPage
   };
 };
 
