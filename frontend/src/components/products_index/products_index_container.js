@@ -3,12 +3,13 @@ import { fetchProducts, fetchProductTypes } from '../../actions/product_actions'
 import ProductIndex from './products_index';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
-  const category= ownProps.match.params.category;
-  let products = Object.values(state.products);
-
+  const category = ownProps.match.params.category;
+  const product_type = ownProps.match.params.product_type;
+  const products = Object.values(state.products);
   return {
-    products
+    products,
+    category,
+    product_type
   };
 };
 
