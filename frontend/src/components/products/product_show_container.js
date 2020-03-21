@@ -9,7 +9,7 @@ import {
 const mapStateToProps = (state = {}, ownProps) => {
   // debugger;
   const id = ownProps.match.params.id;
-  const currentUser = state.session.user._id || {};
+  const currentUser = state.session.user.id || {};
   const cartItem = state.cartItems || {};
 
   return {

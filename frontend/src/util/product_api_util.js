@@ -12,6 +12,5 @@ export const getProductTypes = (category, productType) => {
 
 //Product show page
 export const getProduct = (Id) => {
-  // debugger;
   return axios.get(`/api/products/${Id}`);
 };
