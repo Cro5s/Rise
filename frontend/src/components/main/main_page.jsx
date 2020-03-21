@@ -1,42 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./main_page.css";
+import men from "./assets/images/landscape_0.jpg";
+import women from "./assets/images/landscape_0(3).jpg";
+import kids from "./assets/images/landscape_0(10).jpg";
 
 class MainPage extends React.Component {
   render() {
     return (
       <div className="background">
-        <div className="main-page-container">
-          <div className="main-page">
-            <div className="category-page">
-              <label className="left-label">MAN</label>
-              <div 
-                className="left-chevron"
-              >
-                <i className="fas fa-chevron-left"></i>
-              </div>
-
-              <label className="right-label">KIDS</label>
-              <div 
-                className="right-chevron"
-              >
-                <i className="fas fa-chevron-right"></i>
-              </div>
-              
-              <div className="category-page-bottom">
-                <div 
-                  className="down-chevron"
-                  >
-                  <i className="fas fa-chevron-down"></i>
-                </div>
-
-                <div 
-                  className="page-selection"
-                  >
-                  <i className="fas fa-ellipsis-v"></i>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="men--main">
+          <Link to="/men">
+            <img src={men} alt="men-main"/>
+          </Link>
+        </div>
+        <div className="women--main">
+          <Link to="/woman">
+            <img src={women} alt="women-main" />
+          </Link>
+        </div>
+        <div className="kids--main">
+          <Link to="/kids">
+            <img src={kids} alt="kids-main" />
+          </Link>
         </div>
       </div>
     );
