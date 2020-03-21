@@ -2,7 +2,7 @@ import {
     RECEIVE_CART_ITEMS,
     RECEIVE_CART_ITEM,
     REMOVE_CART_ITEM
-} from "../actions/cart_item_actions";
+} from "../actions/gicart_item_actions";
 
 export default function (state = {}, action) {
     Object.freeze(state);
