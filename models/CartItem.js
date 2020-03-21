@@ -12,6 +12,11 @@ const CartItemSchema = new Schema({
         required: true
     },
 
+    image: {
+        type: String,
+        required: true
+    },
+
     user_id: {
         type: String,
         required: true

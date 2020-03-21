@@ -39,7 +39,8 @@ router.post('/cart_items/:id', (req,res) => {
         user_id: req.body.user_id,
         quantity: req.body.quantity,
         size: req.body.size,
-        price: req.body.price
+        price: req.body.price,
+        image: req.body.image
     });
     new_cart_item.save()
         .then(cart_item => {
