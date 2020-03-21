@@ -21,7 +21,7 @@ const SocialLinks = () => {
                 <br />
                 <p> Rapkat Amin </p>
                 <div>
-                    {/* <a href="" ><i className="fab fa-linkedin fa-4x"></i></a> */}
+                    <a href="https://www.linkedin.com/in/rapkat-amin-33b82b1a4/" ><i className="fab fa-linkedin fa-4x"></i></a>
                     <a href="https://github.com/rapkat10" ><i className="fab fa-github fa-4x"></i></a>
                 </div>
             </div>
