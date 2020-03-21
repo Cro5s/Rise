@@ -8,6 +8,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Footer from './footer/footer';
 import SocialLinks from './footer/social_links';
+import SearchBarContainer from './search/search_bar_container';
 import ProductShowContainer from "./products/product_show_container";
 import ProductIndexContainer from './products/products_index_container';
 
@@ -19,6 +20,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route exact path="/Socials" component={SocialLinks} />
+            <Route exact path="/cart_page" component={SearchBarContainer} />
             <Route exact path="/product/:id" component={ProductShowContainer} />
             <Route exact path="/:category" component={ProductIndexContainer} />
             <Route exact path="/:category/:product_type" component={ProductIndexContainer} />
