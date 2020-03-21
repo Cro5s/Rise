@@ -7,9 +7,12 @@ class ProductShow extends React.Component {
     super(props);
     this.state = { 
       product: this.props.product, 
-      isLoaded: false
+      isLoaded: false,
+      quantity: 0,
+      cartItem: this.props.cartItem,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAddCartItem = this.handleAddCartItem.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +31,29 @@ class ProductShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+  }
+
+  handleAddCartItem() {
+    this.state.quantity += 1;
+    let cartItem;
+
+    if (this.state.quantity > 0) {
+      cartItem = {
+        product_id: this.props.product.id,
+        product_name: this.props.product.product_name,
+        user_id: this.props.currentUser,
+        quantity: this.state.quantity,
+        size: this.props.product.size,
+        price: this.props.product.price
+      };
+
+      this.props.createCartItem(cartItem.user_id, cartItem);
+    } else {
+      cartItem = this.state.cartItem;
+      cartItem.quantity = this.state.quantity;
+      this.props.updateCartItem(cartItem.user_id, cartItem);
+    };
 
   }
 
@@ -83,7 +109,12 @@ class ProductShow extends React.Component {
                   </ul> : <h3 className="sold-out">SOLD OUT</h3>
                 }
               </div>
-              <button className="add-button">ADD</button>
+              <button 
+                className="add-button" 
+                onClick={this.handleAddCartItem}
+              >
+                ADD
+              </button>
             </form>
           </div>
         </div>
