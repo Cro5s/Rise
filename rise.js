@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/api/products", products);
 app.use("/api/users", users);
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
   app.use(passport.initialize());
   require('./config/passport')(passport);
-});
+// });
 app.use('/api/cart_items', cart_items);
 
 if (process.env.NODE_ENV === 'production') {
