@@ -31,17 +31,24 @@ export const fetchCartItems = userId => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const updateCartItem = (id, data) => dispatch => (
+export const updateCartItem = (id, data) => dispatch => {
+  debugger
+  return (
     CartApiUtil.updateCartItem(id, data)
     .then(res => dispatch(receiveCartItems(res.data)))
     .catch(err => console.log(err))
-);
+  );
+};
 
-export const createCartItem = (id, data) => dispatch => (
+export const createCartItem = (id, data) => dispatch => {
+  debugger
+  return (
     CartApiUtil.createCartItem(id, data)
     .then(res => dispatch(receiveCartItems(res.data)))
     .catch(err => console.log(err))
-);
+  );
+
+};
 
 export const deleteCartItem = id=> dispatch => (
     CartApiUtil.deleteCartItem(id)

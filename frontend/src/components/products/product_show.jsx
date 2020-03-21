@@ -12,7 +12,6 @@ class ProductShow extends React.Component {
       size: "",
       cartItem: this.props.cartItem,
     };
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
   }
 
@@ -27,25 +26,20 @@ class ProductShow extends React.Component {
 
   update(field) {
     return e => {
-      this.setState({ [field]: e.currentTarget.value }); 
+      this.setState({ [field]: e.currentTarget.value });
     };
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-
-  // }
-
   handleAddCartItem() {
-    this.setState({ quantity: + 1 });
+    let count = this.state.quantity + 1;
     let cartItem;
-
-    if (this.state.quantity > 0) {
+    
+    if (count === 1) {
       cartItem = {
-        product_id: this.props.product.id,
+        product_id: this.props.product._id,
         product_name: this.props.product.product_name,
         user_id: this.props.currentUser,
-        quantity: this.state.quantity,
+        quantity: count,
         size: this.state.size,
         price: this.props.product.price
       };
@@ -53,7 +47,7 @@ class ProductShow extends React.Component {
       this.props.createCartItem(cartItem.user_id, cartItem);
     } else {
       cartItem = this.state.cartItem;
-      cartItem.quantity = this.state.quantity;
+      cartItem.quantity = count;
       cartItem.size = this.state.size;
       this.props.updateCartItem(cartItem.user_id, cartItem);
     };
@@ -98,7 +92,7 @@ class ProductShow extends React.Component {
               <div className="currency-type">USD</div>
             </div>
             <div className="description">{description}</div>
-            <form className="cart-form" onSubmit={this.handleSubmit}>
+            <div className="cart-form">
               <div className="quantity">
                 {
                   quantity > 0 ? <ul className="sizes">
@@ -119,14 +113,19 @@ class ProductShow extends React.Component {
                   </ul> : <h3 className="sold-out">SOLD OUT</h3>
                 }
               </div>
-              <p className="selected-size">My size is {this.state.size}</p>
+              <p 
+                className="selected-size"
+              >
+                My size is {this.state.size} 
+                {/* {console.log(this.state.size)} */}
+              </p>
               <button 
                 className="add-button" 
                 onClick={this.handleAddCartItem}
               >
                 ADD
               </button>
-            </form>
+            </div>
           </div>
         </div>
       );
