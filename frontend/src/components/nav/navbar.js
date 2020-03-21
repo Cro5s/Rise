@@ -9,6 +9,7 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.openCartPage = this.openCartPage.bind(this);
   }
 
   logoutUser(e) {
@@ -19,6 +20,11 @@ class NavBar extends React.Component {
   handleSearch(e) {
     e.preventDefault();
 
+  }
+
+  openCartPage(e) {
+    e.preventDefault();
+    // this.props.history.push('/cart_page')
   }
 
   render() {
@@ -117,6 +123,7 @@ class NavBar extends React.Component {
             </div>
             <div 
               className="shopping-cart-icon"
+              onClick={this.openCartPage}
             >
               <i className="fas fa-shopping-bag"></i>
             </div>
