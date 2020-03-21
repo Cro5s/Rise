@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/product_actions";
+import { createCartItem } from "../../actions/cart_item_actions";
 
 const mapStateToProps = (state = {}, ownProps) => {
   // debugger;
@@ -15,6 +16,7 @@ const mapStateToProps = (state = {}, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchProduct: id => dispatch(fetchProduct(id)),
+    createCartItem: (id, data) => dispatch(createCartItem(id, data)),
   };
 };
 
