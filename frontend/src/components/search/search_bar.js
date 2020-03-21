@@ -60,7 +60,7 @@ class SearchBar extends React.Component{
                 />
                 <br />
                 <ul>
-                    {this.state.list.map(item => (
+                    {this.state.filtered.map(item => (
                         <li key={item}>
                             {item} &nbsp;
                         </li>
