@@ -57,6 +57,7 @@ class SearchBar extends React.Component{
         });
     }
 
+    
     render(){
         return (
             <div className="search-bar-main">
@@ -73,10 +74,11 @@ class SearchBar extends React.Component{
                     > <i className="far fa-window-close fa-2x"></i> </button>
                 </div>
                 <br />
-                <ul>
+                <ul className="search-link-list">
                     {this.state.filtered.map(item => (
                         <li key={item}>
-                            {item} &nbsp;
+                            {item}
+                            {/* {getLink(item)} &nbsp; */}
                         </li>
                     ))}
                 </ul>
