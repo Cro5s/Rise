@@ -1,11 +1,13 @@
 .search-bar-main {
     padding-left: 40px;
 }
-.search-bar {
+.search-bar-1 {
     display: flex;
     flex-direction: row;
+    padding-bottom: 20px;
+    /* border-bottom: solid 1px black; */
 }
-.search-bar li {
+.search-bar-1 li {
     padding: 20px;
     font-size: 20px;
 }
@@ -18,5 +20,11 @@
 }
 .search-input {
     font-size: 20px;
-    border-bottom: solid 2px black;
+}
+.search-link-list li {
+    font-size: 24px;
+    background-color: #eee;
+    height: 40px;
+    width: 100%;
+    padding-left: 30px;
 }

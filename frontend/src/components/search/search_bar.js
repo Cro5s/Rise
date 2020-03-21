@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './search.css';
 
 class SearchBar extends React.Component{
@@ -13,6 +13,7 @@ class SearchBar extends React.Component{
         }
         this.handleChange = this.handleChange.bind(this);
         this.closeSearchPage = this.closeSearchPage.bind(this);
+        this.getLink = this.getLink.bind(this);
     }
 
     componentDidMount() {
@@ -44,7 +45,6 @@ class SearchBar extends React.Component{
             newList = currentList.filter(item => {
                 const lc = item.toLowerCase();
                 const filter = e.target.value.toLowerCase();
-                debugger;
                 return lc.includes(filter);
             });
         } else {
@@ -57,11 +57,19 @@ class SearchBar extends React.Component{
         });
     }
 
+    getLink(listItem) {
+        const searchStrWords = listItem.split(" ");
+        let route =""
+        route = searchStrWords.map(word => {
+            return route += "/" +  word.toLowerCase();
+        })
+        return <Link to={route[1]} >{listItem.toString()}</Link>;
+    }
     
     render(){
         return (
             <div className="search-bar-main">
-                <div className="search-bar">
+                <div className="search-bar-1">
                     <input 
                         type="text" 
                         className="search-input" 
@@ -74,11 +82,12 @@ class SearchBar extends React.Component{
                     > <i className="far fa-window-close fa-2x"></i> </button>
                 </div>
                 <br />
+                <br />
                 <ul className="search-link-list">
                     {this.state.filtered.map(item => (
                         <li key={item}>
-                            {item}
-                            {/* {getLink(item)} &nbsp; */}
+                            {/* {item} */}
+                            {this.getLink(item)} &nbsp;
                         </li>
                     ))}
                 </ul>
