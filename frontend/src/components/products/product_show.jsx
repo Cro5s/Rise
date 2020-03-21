@@ -25,10 +25,8 @@ class ProductShow extends React.Component {
     
   }
 
-  update(field) {
-    return e => {
-      this.setState({ [field]: e.currentTarget.value });
-    };
+  update(size) {
+    this.setState({ size });
   }
 
   handleAddCartItem() {
@@ -105,7 +103,7 @@ class ProductShow extends React.Component {
                             className="size" 
                             key={idx} 
                             value={s}
-                            onClick={this.update("size")}
+                            onClick={() => this.update(s)}
                           >
                             {s}
                           </li>
