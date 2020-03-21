@@ -5,11 +5,9 @@ import './cart_page.css';
 class CartPage extends React.Component {
 
     constructor(props) {
-
         super(props);
         
         this.backToHome = this.backToHome.bind(this);
-
     }
 
     componentDidMount(){
