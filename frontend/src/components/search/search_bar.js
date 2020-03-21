@@ -9,7 +9,6 @@ class SearchBar extends React.Component{
             list: this.props.list,
             filtered: []
         }
-
         this.handleChange = this.handleChange.bind(this)
     }
 
@@ -37,7 +36,7 @@ class SearchBar extends React.Component{
             newList = currentList.filter(item => {
                 const lc = item.toLowerCase();
                 const filter = e.target.value.toLowerCase();
-
+                debugger;
                 return lc.includes(filter);
             });
         } else {
