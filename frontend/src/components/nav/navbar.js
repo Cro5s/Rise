@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import SearchBarContainer from '../search/search_bar_container';
 import "./navbar.css";
 
 class NavBar extends React.Component {
@@ -19,7 +18,7 @@ class NavBar extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
-
+    this.props.history.push('/search')
   }
 
   openCartPage(e) {

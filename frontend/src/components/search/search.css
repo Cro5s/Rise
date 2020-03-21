@@ -1,0 +1,22 @@
+.search-bar-main {
+    padding-left: 40px;
+}
+.search-bar {
+    display: flex;
+    flex-direction: row;
+}
+.search-bar li {
+    padding: 20px;
+    font-size: 20px;
+}
+.search-close {
+    font-size: 30px;
+    height: 40px;
+    width: 40px;
+    padding-right: 30px;
+    color: gray;
+}
+.search-input {
+    font-size: 20px;
+    border-bottom: solid 2px black;
+}
