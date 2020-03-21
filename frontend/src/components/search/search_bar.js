@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import './search.css';
 
 class SearchBar extends React.Component{
 
@@ -9,7 +11,8 @@ class SearchBar extends React.Component{
             list: this.props.list,
             filtered: []
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.closeSearchPage = this.closeSearchPage.bind(this);
     }
 
     componentDidMount() {
@@ -22,6 +25,11 @@ class SearchBar extends React.Component{
         this.setState({
             filtered: nextProps.list
         });
+    }
+
+    closeSearchPage(e) {
+        e.preventDefault();
+        this.props.history.push('/');
     }
 
     handleChange(e) {
@@ -51,13 +59,19 @@ class SearchBar extends React.Component{
 
     render(){
         return (
-            <div>
-                <input 
-                    type="text" 
-                    className="search-input" 
-                    onChange={this.handleChange} 
-                    placeholder="Search..." 
-                />
+            <div className="search-bar-main">
+                <div className="search-bar">
+                    <input 
+                        type="text" 
+                        className="search-input" 
+                        onChange={this.handleChange} 
+                        placeholder="Search..." 
+                    />
+                    <button 
+                        className="search-close"
+                        onClick={this.closeSearchPage}
+                    > <i className="far fa-window-close fa-2x"></i> </button>
+                </div>
                 <br />
                 <ul>
                     {this.state.filtered.map(item => (
@@ -72,4 +86,4 @@ class SearchBar extends React.Component{
 
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
