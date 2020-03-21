@@ -18,12 +18,12 @@ class NavBar extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
-
+    this.props.history.push('/search')
   }
 
   openCartPage(e) {
     e.preventDefault();
-    this.props.history.push('/cart_page')
+    // this.props.history.push('/cart_page')
   }
 
   render() {
