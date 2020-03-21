@@ -9,33 +9,35 @@ class ProductShow extends React.Component {
       product: this.props.product, 
       isLoaded: false,
       quantity: 0,
+      size: "",
       cartItem: this.props.cartItem,
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
   }
 
   componentDidMount() {
-    // debugger;
     this.props.fetchProduct(this.props.id)
-      // .then(res => {this.setState({product: res})});
+  
     if (this.state.product) {
       this.setState({ isLoaded: true })
     };
     
-    // this.props.fetchProduct("5e73039a1c9d440000ade78e");
-    // .then(res => {this.setState(
-      //   {isLoaded: true }
-      // )});
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.currentTarget.value }); 
+    };
   }
+
+  // handleSubmit(e) {
+  //   e.preventDefault();
+
+  // }
 
   handleAddCartItem() {
-    this.state.quantity += 1;
+    this.setState({ quantity: + 1 });
     let cartItem;
 
     if (this.state.quantity > 0) {
@@ -44,7 +46,7 @@ class ProductShow extends React.Component {
         product_name: this.props.product.product_name,
         user_id: this.props.currentUser,
         quantity: this.state.quantity,
-        size: this.props.product.size,
+        size: this.state.size,
         price: this.props.product.price
       };
 
@@ -52,6 +54,7 @@ class ProductShow extends React.Component {
     } else {
       cartItem = this.state.cartItem;
       cartItem.quantity = this.state.quantity;
+      cartItem.size = this.state.size;
       this.props.updateCartItem(cartItem.user_id, cartItem);
     };
 
@@ -102,13 +105,21 @@ class ProductShow extends React.Component {
                     {
                       size.map((s, idx) => {
                         return (
-                          <li className="size" key={idx}>{s}</li>
+                          <li 
+                            className="size" 
+                            key={idx} 
+                            value={s}
+                            onClick={this.update("size")}
+                          >
+                            {s}
+                          </li>
                         );
                       })
                     }
                   </ul> : <h3 className="sold-out">SOLD OUT</h3>
                 }
               </div>
+              <p className="selected-size">My size is {this.state.size}</p>
               <button 
                 className="add-button" 
                 onClick={this.handleAddCartItem}
