@@ -10,6 +10,7 @@ class ProductShow extends React.Component {
       isLoaded: false,
       quantity: 0,
       size: "",
+      currentUserId: this.props.currentUserId,
       cartItem: this.props.cartItem,
     };
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
@@ -38,9 +39,10 @@ class ProductShow extends React.Component {
       cartItem = {
         product_id: this.props.product._id,
         product_name: this.props.product.product_name,
-        user_id: this.props.currentUser,
+        user_id: this.props.currentUserId,
         quantity: count,
         size: this.state.size,
+        image: this.props.product.images[0],
         price: this.props.product.price
       };
 

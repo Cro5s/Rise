@@ -5,17 +5,17 @@ import {
   createCartItem, 
   updateCartItem 
 } from "../../actions/cart_item_actions";
+import { login } from "../../actions/session_actions";
 
 const mapStateToProps = (state = {}, ownProps) => {
-  // debugger;
   const id = ownProps.match.params.id;
-  const currentUser = state.session.user.id || {};
+  const currentUserId = state.session.user.id || "5e767c7f3e2ba776279b1af0";
   const cartItem = state.cartItems || {};
 
   return {
     product: state.products,
     id,
-    currentUser,
+    currentUserId,
     cartItem,
   };
 };
@@ -25,6 +25,7 @@ const mapDispatchToProps = dispatch => {
     fetchProduct: id => dispatch(fetchProduct(id)),
     createCartItem: (id, data) => dispatch(createCartItem(id, data)),
     updateCartItem: (id, data) => dispatch(updateCartItem(id, data)),
+    login: user => dispatch(login(user)),
   };
 };
 
