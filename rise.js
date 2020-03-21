@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
+const path = require('path');
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const passport = require('passport');
@@ -17,6 +18,13 @@ app.get("/", (req, res) => {
   require('./config/passport')(passport);
 });
 app.use('/api/cart_items', cart_items);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
