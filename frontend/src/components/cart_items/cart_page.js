@@ -44,9 +44,9 @@ class CartPage extends React.Component {
                         {cartItems.map(cartItem => {
                             return (
                                 <li key="cartItem._id">
-                                    <span>
+                                    {/* <span>
                                         <img className="cart-item-img" src={image}  />
-                                    </span>
+                                    </span> */}
                                     <br />
                                     <span>
                                         <label>Name</label>
