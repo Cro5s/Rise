@@ -16,15 +16,15 @@ class SearchBar extends React.Component{
     }
 
     componentDidMount() {
-        this.setState({
-            filtered: this.props.list
-        });
+        // this.setState({
+        //     filtered: this.props.list
+        // });
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            filtered: nextProps.list
-        });
+        // this.setState({
+        //     filtered: nextProps.list
+        // });
     }
 
     closeSearchPage(e) {

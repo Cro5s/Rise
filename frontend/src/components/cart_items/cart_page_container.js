@@ -3,11 +3,12 @@ import { fetchCartItems, deleteCartItem } from '../../actions/cart_item_actions'
 import CartPage from './cart_page';
 
 const mapStateToProps = (state, ownProps) => {
-    const user_id = ownProps.match.params.user_id;
-    const cart_items = Object.values(state.cart_items);
+    const userId = ownProps.match.params.user_id;
+    const cartItems = state.cart_items || [];
 
     return {
-        cart_items
+        userId,
+        cartItems
     };
 };
 

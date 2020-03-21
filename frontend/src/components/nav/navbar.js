@@ -23,7 +23,7 @@ class NavBar extends React.Component {
 
   openCartPage(e) {
     e.preventDefault();
-    // this.props.history.push('/cart_page')
+    this.props.history.push('/cart_page');
   }
 
   render() {

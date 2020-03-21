@@ -1,0 +1,18 @@
+.cart-page-container {
+    height: 1000px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+}
+
+.empty-mesg {
+    text-align: center;
+    font-size: 24px;
+}
+
+.back-to-home {
+    font-size: 20px;
+    text-decoration: underline;
+}
