@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { fetchCartItems, deleteCartItem } from '../../actions/cart_item_actions';
 import CartPage from './cart_page';
 
-const mapStateToProps = (state, ownProps) => {
-    const userId = ownProps.match.params.user_id;
-    const cartItems = state.cart_items || [];
+const mapStateToProps = state => {
+    console.log("state", state);
+
+    const userId = state.session.user.id || "5e767c7f3e2ba776279b1af0";
+    const cartItems = Object.values(state.cart_items) || [];
 
     return {
         userId,

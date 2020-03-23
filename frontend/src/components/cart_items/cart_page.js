@@ -6,12 +6,12 @@ class CartPage extends React.Component {
 
     constructor(props) {
         super(props);
-        
         this.backToHome = this.backToHome.bind(this);
+        this.deleteCartItem = this.deleteCartItem.bind(this);
     }
 
     componentDidMount(){
-        if (!this.props.cartItems){
+        if (this.props.cartItems.length === 0){
             this.props.fetchCartItems(this.props.userId)
         }
     }
@@ -19,6 +19,20 @@ class CartPage extends React.Component {
     backToHome(e) {
         e.preventDefault();
         this.props.history.push("/")
+    }
+
+    deleteCartItem(cartItem) {
+        const cartItems = this.state.cartItems.slice();
+        cartItems.some((el, i) => {
+            if (el === cartItem) {
+                cartItems.splice(i, 1);
+                return true;
+            }
+        });
+        this.props.deleteCartItem(cartItem._id)
+        this.setState({
+            cartItems: cartItems
+        });
     }
 
     render() {
@@ -40,32 +54,38 @@ class CartPage extends React.Component {
                 <div className="cart-page-container ">
                     {/* <form onSubmit={this.handleSubmit} > */}
                     <h2> You have {`${cartItemsCount}`} items in your cart!</h2>
-                    <ul>
+                    <ul className="cart-item-list">
                         {cartItems.map(cartItem => {
                             return (
-                                <li key="cartItem._id">
-                                    {/* <span>
-                                        <img className="cart-item-img" src={image}  />
-                                    </span> */}
-                                    <br />
+                                <li key="cartItem._id" className="cart-list-li">
                                     <span>
+                                        <img className="cart-item-img" src={cartItem.image}  />
+                                    </span>
+                                    <br />
+                                    <span className="cart-item-details-1">
                                         <label>Name</label>
                                         {cartItem.product_name}
                                     </span>
-                                    <span>
+                                    <br />
+                                    <span className="cart-item-details-2">
                                         <label>Quantity</label>
                                         {cartItem.quantity}
                                     </span>
-                                    <button>
+                                    <br />
+                                    <button 
+                                        className="cart-item-delete"
+                                        onClick={() => this.deleteCartItem(cartItem)}
+                                    >
                                         Remove Item
-                                    </button>
-                                    <button>
-                                        Pay with Paypal
                                     </button>
                                 </li>
                             )
                         })}
                     </ul>
+
+                    <button className="cart-item-pay">
+                        Pay with Paypal
+                    </button>
 
                     {/* </form> */}
 

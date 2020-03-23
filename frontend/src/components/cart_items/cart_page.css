@@ -6,13 +6,32 @@
     justify-content: center;
     padding-left: 100px;
 }
-
+h2 {
+    font-size: 30px;
+}
+.cart-item-list {
+    display: flex;
+    flex-direction: row;
+}
 .empty-mesg {
     text-align: center;
     font-size: 24px;
 }
-
+.cart-list-li {
+    padding-right: 20px;
+}
+.cart-list-li span {
+     padding-bottom: 10px;
+}
 .back-to-home {
     font-size: 20px;
     text-decoration: underline;
+}
+.cart-item-img {
+    height: 200px;
+    width: 160px;
+}
+.cart-item-delete {
+    background-color: #eee;
+    border-radius: 5px;
 }
