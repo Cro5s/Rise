@@ -25,6 +25,15 @@ class CartPage extends React.Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.cartItems.length !== this.props.cartItems.length) {
+            this.setState({
+                cartItems: Object.values(this.props.cartItems),
+                total: this.addTotal()
+            });
+        }
+    }
+
     backToHome(e) {
         e.preventDefault();
         this.props.history.push("/")
@@ -39,10 +48,6 @@ class CartPage extends React.Component {
             return true;
         });
         this.props.deleteCartItem(cartItem._id)
-        this.setState({
-            cartItems: cartItems,
-            total: this.addTotal()
-        });
     }
 
     addTotal() {
