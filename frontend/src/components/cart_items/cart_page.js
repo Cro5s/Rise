@@ -47,7 +47,11 @@ class CartPage extends React.Component {
             }
             return true;
         });
-        this.props.deleteCartItem(cartItem._id)
+        this.props.deleteCartItem(cartItem._id);
+        this.setState({
+            cartItems: Object.values(this.props.cartItems),
+            total: this.addTotal()
+        });
     }
 
     addTotal() {
@@ -114,7 +118,7 @@ class CartPage extends React.Component {
                     </ul>
                     <span className="cart-item-total">
                         <label> Total  </label>
-                        {this.addTotal()}
+                        {this.state.total}
                     </span>
                     <br />
                     <button className="cart-item-pay">
