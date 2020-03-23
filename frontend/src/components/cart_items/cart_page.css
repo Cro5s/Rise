@@ -1,6 +1,6 @@
 .cart-page-container {
-    height: 1000px;
-    width: 800px;
+    /* height: 1000px;
+    width: 800px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,6 +8,7 @@
 }
 h2 {
     font-size: 30px;
+    padding-bottom: 20px;
 }
 .cart-item-list {
     display: flex;
@@ -32,6 +33,14 @@ h2 {
     width: 160px;
 }
 .cart-item-delete {
-    background-color: #eee;
+    background-color: grey;
     border-radius: 5px;
+    text-align: center;
+}
+.cart-item-pay {
+    background-color: rgb(56, 56, 126);
+    margin-top: 30px;
+    height: 30px;
+    width: 120px;
+    font-size:16px;
 }

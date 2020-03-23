@@ -6,6 +6,9 @@ class CartPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            cartItems: this.props.cartItems
+        }
         this.backToHome = this.backToHome.bind(this);
         this.deleteCartItem = this.deleteCartItem.bind(this);
     }
@@ -22,7 +25,7 @@ class CartPage extends React.Component {
     }
 
     deleteCartItem(cartItem) {
-        const cartItems = this.state.cartItems.slice();
+        const cartItems = this.props.cartItems.slice();
         cartItems.some((el, i) => {
             if (el === cartItem) {
                 cartItems.splice(i, 1);
@@ -57,7 +60,7 @@ class CartPage extends React.Component {
                     <ul className="cart-item-list">
                         {cartItems.map(cartItem => {
                             return (
-                                <li key="cartItem._id" className="cart-list-li">
+                                <li key="cartItem.product_id" className="cart-list-li">
                                     <span>
                                         <img className="cart-item-img" src={cartItem.image}  />
                                     </span>
@@ -82,7 +85,7 @@ class CartPage extends React.Component {
                             )
                         })}
                     </ul>
-
+                    
                     <button className="cart-item-pay">
                         Pay with Paypal
                     </button>
