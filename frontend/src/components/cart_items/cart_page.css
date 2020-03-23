@@ -45,3 +45,7 @@ h2 {
     width: 120px;
     font-size:16px;
 }
+.cart-item-total {
+    margin-top: 30px;
+    font-size: 20px;
+}

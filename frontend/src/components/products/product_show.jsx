@@ -51,7 +51,7 @@ class ProductShow extends React.Component {
       cartItem.size = this.state.size;
       this.props.updateCartItem(cartItem.user_id, cartItem);
     };
-
+    this.props.history.push("/cart_page");
   }
 
   render() {

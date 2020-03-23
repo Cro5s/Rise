@@ -7,15 +7,21 @@ class CartPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cartItems: this.props.cartItems
+            cartItems: Object.values(this.props.cartItems),
+            total: this.addTotal()
         }
         this.backToHome = this.backToHome.bind(this);
         this.deleteCartItem = this.deleteCartItem.bind(this);
+        this.addTotal = this.addTotal.bind(this);
     }
 
     componentDidMount(){
         if (this.props.cartItems.length === 0){
-            this.props.fetchCartItems(this.props.userId)
+            this.props.fetchCartItems(this.props.userId);
+            this.setState({
+                cartItems: Object.values(this.props.cartItems),
+                total: this.addTotal()
+            });
         }
     }
 
@@ -29,19 +35,26 @@ class CartPage extends React.Component {
         cartItems.some((el, i) => {
             if (el === cartItem) {
                 cartItems.splice(i, 1);
-                return true;
             }
+            return true;
         });
         this.props.deleteCartItem(cartItem._id)
         this.setState({
-            cartItems: cartItems
+            cartItems: cartItems,
+            total: this.addTotal()
         });
+    }
+
+    addTotal() {
+        let total = 0;
+        this.props.cartItems.forEach(cartItem => {
+            total += (cartItem.quantity * cartItem.price);
+        });
+        return total.toFixed(2);
     }
 
     render() {
         const cartItems = this.props.cartItems;
-        console.log("cart-items", cartItems);
-
         const cartItemsCount = cartItems.length;
         if (cartItemsCount === 0) {
             return (
@@ -55,14 +68,13 @@ class CartPage extends React.Component {
         } else {
             return (
                 <div className="cart-page-container ">
-                    {/* <form onSubmit={this.handleSubmit} > */}
                     <h2> You have {`${cartItemsCount}`} items in your cart!</h2>
                     <ul className="cart-item-list">
-                        {cartItems.map(cartItem => {
+                        {cartItems.map((cartItem,idx) => {
                             return (
-                                <li key="cartItem.product_id" className="cart-list-li">
+                                <li key={idx} className="cart-list-li">
                                     <span>
-                                        <img className="cart-item-img" src={cartItem.image}  />
+                                        <img className="cart-item-img" alt="" src={cartItem.image}  />
                                     </span>
                                     <br />
                                     <span className="cart-item-details-1">
@@ -80,6 +92,11 @@ class CartPage extends React.Component {
                                         {cartItem.quantity}
                                     </span>
                                     <br />
+                                    <span className="cart-item-details-4">
+                                        <label>Price </label>
+                                        {cartItem.price ? cartItem.price.toFixed(2) : null}
+                                    </span>
+                                    <br />
                                     <button 
                                         className="cart-item-delete"
                                         onClick={() => this.deleteCartItem(cartItem)}
@@ -90,12 +107,14 @@ class CartPage extends React.Component {
                             )
                         })}
                     </ul>
-                    
+                    <span className="cart-item-total">
+                        <label> Total  </label>
+                        {this.addTotal()}
+                    </span>
+                    <br />
                     <button className="cart-item-pay">
                         Pay with Paypal
                     </button>
-
-                    {/* </form> */}
 
                 </div>
             );
