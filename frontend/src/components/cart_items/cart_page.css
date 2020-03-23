@@ -33,12 +33,13 @@ h2 {
     width: 160px;
 }
 .cart-item-delete {
-    background-color: grey;
+    background-color: lightgray;
     border-radius: 5px;
     text-align: center;
 }
 .cart-item-pay {
-    background-color: rgb(56, 56, 126);
+    background-color: rgb(107, 107, 151);
+    color: white;
     margin-top: 30px;
     height: 30px;
     width: 120px;

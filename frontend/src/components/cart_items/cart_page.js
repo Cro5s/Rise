@@ -66,12 +66,17 @@ class CartPage extends React.Component {
                                     </span>
                                     <br />
                                     <span className="cart-item-details-1">
-                                        <label>Name</label>
+                                        <label>Name </label>
                                         {cartItem.product_name}
                                     </span>
                                     <br />
                                     <span className="cart-item-details-2">
-                                        <label>Quantity</label>
+                                        <label>Size </label>
+                                        {cartItem.size}
+                                    </span>
+                                    <br />
+                                    <span className="cart-item-details-3">
+                                        <label>Quantity </label>
                                         {cartItem.quantity}
                                     </span>
                                     <br />
