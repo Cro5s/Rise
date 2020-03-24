@@ -6,9 +6,28 @@ import "./navbar.css";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cartItemCount: this.props.cartItems.length
+    }
     this.logoutUser = this.logoutUser.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.openCartPage = this.openCartPage.bind(this);
+  }
+
+  // componentDidMount() {
+  //   if ( this.state.cartItemCount !== this.props.cartItems.length){
+  //     this.setState({
+  //       cartItemCount: this.props.cartItems.length
+  //     })
+  //   }
+  // }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.cartItems.length !== this.props.cartItems.length){
+      this.setState({
+        cartItemCount: this.props.cartItems.length
+      })
+    }
   }
 
   logoutUser(e) {
@@ -119,6 +138,9 @@ class NavBar extends React.Component {
             { 
               this.props.loggedIn ? <h3 className="user-name">{currentUserName}</h3> : <Link className="login-link" to="/login">LOG IN</Link>
             }
+            </div>
+            <div className="shopping-cart-count">
+              {this.state.cartItemCount}
             </div>
             <div 
               className="shopping-cart-icon"

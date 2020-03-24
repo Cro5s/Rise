@@ -48,6 +48,7 @@ class CartPage extends React.Component {
             return true;
         });
         this.props.deleteCartItem(cartItem._id);
+        debugger;
         this.setState({
             cartItems: Object.values(this.props.cartItems),
             total: this.addTotal()

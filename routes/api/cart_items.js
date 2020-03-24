@@ -22,7 +22,6 @@ router.put('/cart_items/:id', (req, res) => {
             cart_item.save()
                 .then(cart_item => {
                     res.json({
-                        success: true,
                         cart_item 
                     });
                 })
@@ -42,11 +41,9 @@ router.post('/cart_items/:id', (req,res) => {
         price: req.body.price,
         image: req.body.image
     });
-    debugger
     new_cart_item.save()
         .then(cart_item => {
             res.json({
-                success: true,
                 cart_item
             });
         })

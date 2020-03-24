@@ -4,15 +4,14 @@ import CartPage from './cart_page';
 
 const mapStateToProps = state => {
     let userId;
-    let cartItems;
     if (state.session.isAuthenticated) {
         userId = state.session.user.id;
-        cartItems = Object.values(state.cart_items);
     } else {
         userId = "5e767c7f3e2ba776279b1af0";
-        cartItems = Object.values(state.cart_items);
     }
-
+    // debugger;
+    const cartItems = Object.values(state.cart_items);
+    
     return {
         userId,
         cartItems

@@ -3,14 +3,20 @@ import { receiveCurrentUser, logout } from "../../actions/session_actions";
 import NavBar from './navbar';
 
 const mapStateToProps = state => {
+  
+  const cartItems = state.cart_items;
+  const loggedIn = state.session.isAuthenticated;
+
    if (state.session.user) {
     return {
       currentUserName: state.session.user.fName,   
-      loggedIn: state.session.isAuthenticated,
+      loggedIn,
+      cartItems
     };
   } else {
     return {
-      loggedIn: state.session.isAuthenticated
+      loggedIn,
+      cartItems
     };
   };
 };

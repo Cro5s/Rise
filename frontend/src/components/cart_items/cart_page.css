@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 100px;
+    padding-left: 300px;
 }
 h2 {
     font-size: 30px;
@@ -22,15 +22,15 @@ h2 {
     padding-right: 20px;
 }
 .cart-list-li span {
-     padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 .back-to-home {
     font-size: 20px;
     text-decoration: underline;
 }
 .cart-item-img {
-    height: 200px;
-    width: 160px;
+    height: 240px;
+    width: 200px;
 }
 .cart-item-delete {
     background-color: lightgray;
@@ -44,6 +44,7 @@ h2 {
     height: 30px;
     width: 120px;
     font-size:16px;
+    margin-bottom: 100px;
 }
 .cart-item-total {
     margin-top: 30px;
