@@ -140,7 +140,9 @@ class NavBar extends React.Component {
             }
             </div>
             <div className="shopping-cart-count">
-              {this.state.cartItemCount}
+              {
+                this.state.cartItemCount ? "("+this.state.cartItemCount+")" : null
+              }
             </div>
             <div 
               className="shopping-cart-icon"
