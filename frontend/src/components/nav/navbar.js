@@ -61,7 +61,7 @@ class NavBar extends React.Component {
                   <Link to="/woman" className="category-link-1">WOMAN</Link>
                   <ul className="menu-item-1-subitems">
                     <li className="menu-item--is-divider" role="separator"/>
-                    <li className="menu-item--is-divider" role="separator" />
+                    <li className="menu-item--is-divider" role="separator"/>
                     <li className="category-menu-item-1-1">
                       <Link to="/woman/jackets" className="category-link-1-1">JACKETS</Link>
                     </li>
