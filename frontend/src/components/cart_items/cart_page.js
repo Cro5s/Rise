@@ -43,24 +43,31 @@ class CartPage extends React.Component {
 
             return (
                 <div className="cart-page-container ">
-                    {/* <form onSubmit={this.handleSubmit} > */}
                     <h2 className="shopping-cart">SHOPPING CART</h2>
                     <h2>{cartItemsCount} items</h2>
                     <div className="cart-list-div">
                         <ul className="cart-list-ul">
                             {cartItems.map((cartItem, i) => {
+                                let price;
+                                if (cartItem.price) {
+                                    price = cartItem.price.toFixed(2);
+                                }
                                 return (
                                     <li className="cart-list-li" key={i}>
                                         <div>
-                                            <img className="cart-item-img" 
-                                            src={cartItem.image}
-                                            alt={cartItem.product_name}  />
+                                            {/* <Link to={`/product/${cartItem._id}`} > */}
+                                                <img className="cart-item-img" 
+                                                src={cartItem.image}
+                                                alt={cartItem.product_name}  />
+                                            {/* </Link> */}
                                         </div>
                                         <div className="cart-product-name">
-                                            {cartItem.product_name}
+                                            {/* <Link to = {`/product/${cartItem._id}`} > */}
+                                                {cartItem.product_name}
+                                            {/* </Link> */}
                                         </div>
                                         <div className="cart-item-price">
-                                            {`${cartItem.price} USD`}
+                                            {`${price} USD`}
                                         </div>
                                         < div className = "cart-product-size" >
                                             {cartItem.size}
@@ -83,16 +90,15 @@ class CartPage extends React.Component {
                     </div>
 
                     <div className="cart-footer">
-                        <div>
+                        <div className="total-price">
                             {`TOTAL ${total} USD`}
                         </div>
                         <div>
                             <button>
-                                Pay with Paypal 
+                                Checkout 
                             </button>
                         </div>
                     </div>
-                    {/* </form> */}
 
                 </div>
             );

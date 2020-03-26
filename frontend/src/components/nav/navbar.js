@@ -26,8 +26,23 @@ class NavBar extends React.Component {
     this.props.history.push('/cart_page');
   }
 
+  componentDidMount() {
+    this.props.fetchCartItems(this.props.userId);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.cartItemsLength !== this.props.cartItemsLength) {
+      this.props.fetchCartItems(this.props.userId);
+    }
+  }
+
   render() {
-    const { currentUserName } = this.props;
+    const { currentUserName, cartItemsLength } = this.props;
+    if (cartItemsLength === 0) return null;
+
+    let selected;
+    cartItemsLength >= 10 ? (selected = "cart-count cart-count-10")
+    : (selected = "cart-count");
 
     return (
       <div className="nav-bar-container">
@@ -122,8 +137,8 @@ class NavBar extends React.Component {
             </div>
             <div 
               className="shopping-cart-icon"
-              onClick={this.openCartPage}
-            >
+              onClick={this.openCartPage}>
+              <div className={selected}>{this.props.cartItemsLength}</div>
               <i className="fas fa-shopping-bag"></i>
             </div>
           </div>

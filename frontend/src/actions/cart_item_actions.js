@@ -34,7 +34,7 @@ export const fetchCartItems = userId => dispatch => (
 export const updateCartItem = (id, data) => dispatch => {
   return (
     CartApiUtil.updateCartItem(id, data)
-    .then(res => dispatch(receiveCartItems(res.data)))
+    .then(res => dispatch(receiveCartItem(res.data)))
     .catch(err => console.log(err))
   );
 };
@@ -42,7 +42,7 @@ export const updateCartItem = (id, data) => dispatch => {
 export const createCartItem = (id, data) => dispatch => {
   return (
     CartApiUtil.createCartItem(id, data)
-    .then(res => dispatch(receiveCartItems(res.data)))
+    .then(res => dispatch(receiveCartItem(res.data)))
     .catch(err => console.log(err))
   );
 

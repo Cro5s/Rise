@@ -97,11 +97,23 @@
 }
 
 .cart-footer {
+    /* max-width: 850px; */
     display: flex;
     justify-content: space-between;
     padding: 10px;
 
     /* border: 1px solid red; */
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-footer > div > button {
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 150px;
 }
 
 .shopping-cart {
