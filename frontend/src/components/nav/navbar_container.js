@@ -8,7 +8,8 @@ const mapStateToProps = state => {
   const cartItems = Object.values(state.cart_items);
   const userId = state.session.user.id || "5e767c7f3e2ba776279b1af0";
   let cartItemsLength;
-  cartItems.length === 0 ? (cartItemsLength = 0) : (cartItemsLength = cartItems.length)
+  cartItems.length === 0 ? (cartItemsLength = 0) 
+  : (cartItemsLength = cartItems.length);
   if (state.session.user) {
     return {
       currentUserName: state.session.user.fName,   

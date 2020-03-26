@@ -3,7 +3,7 @@ import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/product_actions";
 import { 
   createCartItem, 
-  updateCartItem 
+  updateCartItem
 } from "../../actions/cart_item_actions";
 import { login } from "../../actions/session_actions";
 
@@ -16,7 +16,7 @@ const mapStateToProps = (state = {}, ownProps) => {
     product: state.products,
     id,
     currentUserId,
-    cartItem,
+    cartItem
   };
 };
 
