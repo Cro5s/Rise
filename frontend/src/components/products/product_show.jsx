@@ -117,7 +117,6 @@ class ProductShow extends React.Component {
                 className="selected-size"
               >
                 My size is {this.state.size} 
-                {/* {console.log(this.state.size)} */}
               </p>
               <button 
                 className="add-button" 
