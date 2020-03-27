@@ -11,8 +11,8 @@ class ProductShow extends React.Component {
       quantity: 0,
       size: "",
       currentUserId: this.props.currentUserId,
-      cartItem: this.props.cartItem,
-      added: false
+      cartItem: this.props.cartItem
+      // added: false
     };
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
   }
@@ -33,7 +33,7 @@ class ProductShow extends React.Component {
   handleAddCartItem() {
     let count = this.state.quantity + 1;
     let cartItem;
-    this.setState({added: true});
+    // this.setState({added: true});
 
     if (count === 1) {
       cartItem = {
@@ -53,7 +53,6 @@ class ProductShow extends React.Component {
       cartItem.size = this.state.size;
       this.props.updateCartItem(cartItem.user_id, cartItem);
     };
-    this.props.history.push("/cart_page");
   }
 
   render() {
@@ -71,9 +70,9 @@ class ProductShow extends React.Component {
     if (images === undefined) images = [];
     if (price) price = price.toFixed(2);
 
-    let selected;
-    this.state.added ? (selected = "add-button added")
-    : (selected = "add-button")
+    // let selected;
+    // this.state.added ? (selected = "add-button added")
+    // : (selected = "add-button")
 
     if (this.state.isLoaded) {
       return (
@@ -119,15 +118,12 @@ class ProductShow extends React.Component {
                   </ul> : <h3 className="sold-out">SOLD OUT</h3>
                 }
               </div>
-              <p 
-                className="selected-size"
-              >
+              <p className="selected-size">
                 My size is {this.state.size} 
-                {/* {console.log(this.state.size)} */}
               </p>
               <button
                 id="addButton" 
-                className={selected}
+                className="add-button"
                 onClick={this.handleAddCartItem}
               >
                 ADD

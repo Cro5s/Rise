@@ -6,10 +6,7 @@ class CartPage extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = {
-        //     cartItems: Object.values(this.props.cartItems),
-        //     total: this.addTotal()
-        // }
+        
         this.backToHome = this.backToHome.bind(this);
     }
 

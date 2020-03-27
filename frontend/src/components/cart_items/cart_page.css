@@ -15,16 +15,12 @@
 .cart-page-container > * {
     margin-bottom: 10px;
 }
+
 .empty-mesg {
     text-align: center;
     font-size: 24px;
 }
-.cart-list-li {
-    padding-right: 20px;
-}
-.cart-list-li span {
-    padding-bottom: 10px;
-}
+
 .back-to-home {
     font-size: 20px;
     text-decoration: underline;

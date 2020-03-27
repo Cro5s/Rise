@@ -7,7 +7,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.added = false;
+    // this.added = false;
 
     this.logoutUser = this.logoutUser.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -47,17 +47,19 @@ class NavBar extends React.Component {
     cartItemsLength >= 10 ? (selected = "cart-count cart-count-10")
     : (selected = "cart-count");
 
-    if (this.props.location.pathname.split("/")[1] !== "product") {
-      this.added = false;
-    } else {
-      const addbutton = document.getElementById("addButton");
-      if (addbutton) {
-        if (addbutton.className === "add-button added") {
-          this.added ? (this.added = false) : (this.added = true);
-        }
-        if (this.added) return null;
-      }
-    }
+    // if (this.props.location.pathname.split("/")[1] !== "product") {
+    //   debugger;
+    //   this.added = false;
+    // } else {
+    //   const addbutton = document.getElementById("addButton");
+    //   if (addbutton) {
+    //     if (addbutton.className === "add-button added") {
+    //       debugger;
+    //       this.added ? (this.added = false) : (this.added = true);
+    //     }
+    //     if (this.added) return null;
+    //   }
+    // }
     
     return (
       <div className="nav-bar-container">
