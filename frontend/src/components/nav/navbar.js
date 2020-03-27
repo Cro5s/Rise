@@ -6,28 +6,12 @@ import "./navbar.css";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cartItemCount: this.props.cartItems.length
-    }
+
+    this.added = false;
+
     this.logoutUser = this.logoutUser.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.openCartPage = this.openCartPage.bind(this);
-  }
-
-  // componentDidMount() {
-  //   if ( this.state.cartItemCount !== this.props.cartItems.length){
-  //     this.setState({
-  //       cartItemCount: this.props.cartItems.length
-  //     })
-  //   }
-  // }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.cartItems.length !== this.props.cartItems.length){
-      this.setState({
-        cartItemCount: this.props.cartItems.length
-      })
-    }
   }
 
   logoutUser(e) {
@@ -45,9 +29,36 @@ class NavBar extends React.Component {
     this.props.history.push('/cart_page');
   }
 
-  render() {
-    const { currentUserName } = this.props;
+  componentDidMount() {
+    this.props.fetchCartItems(this.props.userId);
+  }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.cartItemsLength !== this.props.cartItemsLength) {
+      this.props.fetchCartItems(this.props.userId);
+    }
+  }
+
+  render() {
+    const { currentUserName, cartItemsLength } = this.props;
+    if (cartItemsLength === 0) return null;
+
+    let selected;
+    cartItemsLength >= 10 ? (selected = "cart-count cart-count-10")
+    : (selected = "cart-count");
+
+    if (this.props.location.pathname.split("/")[1] !== "product") {
+      this.added = false;
+    } else {
+      const addbutton = document.getElementById("addButton");
+      if (addbutton) {
+        if (addbutton.className === "add-button added") {
+          this.added ? (this.added = false) : (this.added = true);
+        }
+        if (this.added) return null;
+      }
+    }
+    
     return (
       <div className="nav-bar-container">
         <div className="navbar-icon-container">
@@ -61,7 +72,7 @@ class NavBar extends React.Component {
                   <Link to="/woman" className="category-link-1">WOMAN</Link>
                   <ul className="menu-item-1-subitems">
                     <li className="menu-item--is-divider" role="separator"/>
-                    <li className="menu-item--is-divider" role="separator"/>
+                    <li className="menu-item--is-divider" role="separator" />
                     <li className="category-menu-item-1-1">
                       <Link to="/woman/jackets" className="category-link-1-1">JACKETS</Link>
                     </li>
@@ -139,15 +150,10 @@ class NavBar extends React.Component {
               this.props.loggedIn ? <h3 className="user-name">{currentUserName}</h3> : <Link className="login-link" to="/login">LOG IN</Link>
             }
             </div>
-            <div className="shopping-cart-count">
-              {
-                this.state.cartItemCount ? "("+this.state.cartItemCount+")" : null
-              }
-            </div>
             <div 
               className="shopping-cart-icon"
-              onClick={this.openCartPage}
-            >
+              onClick={this.openCartPage}>
+              <div className={selected}>{this.props.cartItemsLength}</div>
               <i className="fas fa-shopping-bag"></i>
             </div>
           </div>

@@ -6,32 +6,15 @@ class CartPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            cartItems: Object.values(this.props.cartItems),
-            total: this.addTotal()
-        }
+        // this.state = {
+        //     cartItems: Object.values(this.props.cartItems),
+        //     total: this.addTotal()
+        // }
         this.backToHome = this.backToHome.bind(this);
-        this.deleteCartItem = this.deleteCartItem.bind(this);
-        this.addTotal = this.addTotal.bind(this);
     }
 
     componentDidMount(){
-        if (this.props.cartItems.length === 0){
-            this.props.fetchCartItems(this.props.userId);
-            this.setState({
-                cartItems: Object.values(this.props.cartItems),
-                total: this.addTotal()
-            });
-        }
-    }
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.cartItems.length !== this.props.cartItems.length) {
-            this.setState({
-                cartItems: Object.values(this.props.cartItems),
-                total: this.addTotal()
-            });
-        }
+        this.props.fetchCartItems(this.props.userId);
     }
 
     backToHome(e) {
@@ -39,32 +22,12 @@ class CartPage extends React.Component {
         this.props.history.push("/")
     }
 
-    deleteCartItem(cartItem) {
-        const cartItems = this.props.cartItems.slice();
-        cartItems.some((el, i) => {
-            if (el === cartItem) {
-                cartItems.splice(i, 1);
-            }
-            return true;
-        });
-        this.props.deleteCartItem(cartItem._id);
-        this.setState({
-            cartItems: Object.values(this.props.cartItems),
-            total: this.addTotal()
-        });
-    }
-
-    addTotal() {
-        let total = 0;
-        this.props.cartItems.forEach(cartItem => {
-            total += (cartItem.quantity * cartItem.price);
-        });
-        return total.toFixed(2);
-    }
-
     render() {
-        const cartItems = this.props.cartItems;
+        const { cartItems } = this.props;
+        if (cartItems.length === 0) return null;
+
         const cartItemsCount = cartItems.length;
+
         if (cartItemsCount === 0) {
             return (
                 <div className="empty-mesg">
@@ -75,55 +38,70 @@ class CartPage extends React.Component {
                 </div>
             );
         } else {
+            let total = 0;
+            cartItems.forEach(item => {
+                total += item.price;
+            });
+            total = total.toFixed(2);
+
             return (
                 <div className="cart-page-container ">
-                    <h2> You have {`${cartItemsCount}`} items in your cart!</h2>
-                    <ul className="cart-item-list">
-                        {cartItems.map((cartItem,idx) => {
-                            return (
-                                <li key={idx} className="cart-list-li">
-                                    <span>
-                                        <img className="cart-item-img" alt="" src={cartItem.image}  />
-                                    </span>
-                                    <br />
-                                    <span className="cart-item-details-1">
-                                        <label>Name </label>
-                                        {cartItem.product_name}
-                                    </span>
-                                    <br />
-                                    <span className="cart-item-details-2">
-                                        <label>Size </label>
-                                        {cartItem.size}
-                                    </span>
-                                    <br />
-                                    <span className="cart-item-details-3">
-                                        <label>Quantity </label>
-                                        {cartItem.quantity}
-                                    </span>
-                                    <br />
-                                    <span className="cart-item-details-4">
-                                        <label>Price </label>
-                                        {cartItem.price ? cartItem.price.toFixed(2) : null}
-                                    </span>
-                                    <br />
-                                    <button 
-                                        className="cart-item-delete"
-                                        onClick={() => this.deleteCartItem(cartItem)}
-                                    >
-                                        Remove Item
-                                    </button>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                    <span className="cart-item-total">
-                        <label> Total  </label>
-                        {this.state.total}
-                    </span>
-                    <br />
-                    <button className="cart-item-pay">
-                        Pay with Paypal
-                    </button>
+                    <h2 className="shopping-cart">SHOPPING CART</h2>
+                    <h2>{cartItemsCount} items</h2>
+                    <div className="cart-list-div">
+                        <ul className="cart-list-ul">
+                            {cartItems.map((cartItem, i) => {
+                                let price;
+                                if (cartItem.price) {
+                                    price = cartItem.price.toFixed(2);
+                                }
+                                return (
+                                    <li className="cart-list-li" key={i}>
+                                        <div>
+                                            {/* <Link to={`/product/${cartItem._id}`} > */}
+                                                <img className="cart-item-img" 
+                                                src={cartItem.image}
+                                                alt={cartItem.product_name}  />
+                                            {/* </Link> */}
+                                        </div>
+                                        <div className="cart-product-name">
+                                            {/* <Link to = {`/product/${cartItem._id}`} > */}
+                                                {cartItem.product_name}
+                                            {/* </Link> */}
+                                        </div>
+                                        <div className="cart-item-price">
+                                            {`${price} USD`}
+                                        </div>
+                                        < div className = "cart-product-size" >
+                                            {cartItem.size}
+                                        </div>
+                                        <div>
+                                            {`Quantity: ${cartItem.quantity}`}
+                                        </div>
+                                        <div className="cart-item-delete-div">
+                                            <button
+                                                onClick={() => 
+                                                    this.props.deleteCartItem(cartItem._id)
+                                                    }>
+                                                DELETE
+                                            </button>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+
+                    <div className="cart-footer">
+                        <div className="total-price">
+                            {`TOTAL ${total} USD`}
+                        </div>
+                        <div>
+                            <button>
+                                Checkout 
+                            </button>
+                        </div>
+                    </div>
 
                 </div>
             );
