@@ -22,8 +22,8 @@ A clone of Retail Site Zara
 
 # Description
 	  User can browse through the site without logging in 
-	  Product show will also show an index of other items which are similar in category
-	  Navbar at the bottom
+	  Homepage has image-links to the main categories: Men/Woman/Kids
+	  Navbar to each category enables when hover over menu icon.
 	  Guest login for all features
 	  Shopping cart created mapped to the session and closed when the session closes
 
