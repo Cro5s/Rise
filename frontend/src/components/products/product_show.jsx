@@ -12,7 +12,6 @@ class ProductShow extends React.Component {
       size: "",
       currentUserId: this.props.currentUserId,
       cartItem: this.props.cartItem
-      // added: false
     };
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
   }
@@ -33,7 +32,6 @@ class ProductShow extends React.Component {
   handleAddCartItem() {
     let count = this.state.quantity + 1;
     let cartItem;
-    // this.setState({added: true});
 
     if (count === 1) {
       cartItem = {
@@ -69,10 +67,6 @@ class ProductShow extends React.Component {
     
     if (images === undefined) images = [];
     if (price) price = price.toFixed(2);
-
-    // let selected;
-    // this.state.added ? (selected = "add-button added")
-    // : (selected = "add-button")
 
     if (this.state.isLoaded) {
       return (
