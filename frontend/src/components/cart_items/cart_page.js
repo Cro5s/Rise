@@ -21,7 +21,7 @@ class CartPage extends React.Component {
 
     render() {
         const { cartItems } = this.props;
-        if (cartItems.length === 0) return null;
+        // if (cartItems.length === 0) return null;
 
         const cartItemsCount = cartItems.length;
 

@@ -39,12 +39,12 @@ class NavBar extends React.Component {
 
   render() {
     const { currentUserName, cartItemsLength } = this.props;
-    if (cartItemsLength === 0) return null;
+    // if (cartItemsLength === 0) return null;
 
     let selected;
     cartItemsLength >= 10 ? (selected = "cart-count cart-count-10")
     : (selected = "cart-count");
-    
+
     return (
       <div className="nav-bar-container">
         <div className="navbar-icon-container">

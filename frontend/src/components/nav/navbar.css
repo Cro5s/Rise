@@ -106,6 +106,7 @@
   margin: 20px;
   padding-right: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .cart-count {
@@ -116,7 +117,7 @@
   position: absolute;
   top: 40%;
   left: 28%;
-  cursor: default;
+  cursor: pointer;
 
 }
 
@@ -128,7 +129,7 @@
   position: absolute;
   top: 40%;
   left: 15%;
-  cursor: default;
+  cursor: pointer;
 }
 
 /* Style the search box inside the navigation bar */
