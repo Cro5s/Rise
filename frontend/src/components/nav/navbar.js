@@ -34,12 +34,13 @@ class NavBar extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.cartItemsLength !== this.props.cartItemsLength) {
       this.props.fetchCartItems(this.props.userId);
+    } else if (prevProps.userId !== this.props.userId) {
+        this.props.fetchCartItems(this.props.userId);
     }
   }
 
   render() {
     const { currentUserName, cartItemsLength } = this.props;
-    // if (cartItemsLength === 0) return null;
 
     let selected;
     cartItemsLength >= 10 ? (selected = "cart-count cart-count-10")

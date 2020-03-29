@@ -8,6 +8,14 @@ class CartPage extends React.Component {
         super(props);
         
         this.backToHome = this.backToHome.bind(this);
+        this.deleteAll = this.deleteAll.bind(this);
+    }
+
+    deleteAll() {
+        const { cartItems } = this.props;
+        cartItems.forEach(cartItem => {
+            this.props.deleteCartItem(cartItem._id);
+        })
     }
 
     componentDidMount(){
@@ -21,8 +29,6 @@ class CartPage extends React.Component {
 
     render() {
         const { cartItems } = this.props;
-        // if (cartItems.length === 0) return null;
-
         const cartItemsCount = cartItems.length;
 
         if (cartItemsCount === 0) {
@@ -94,7 +100,7 @@ class CartPage extends React.Component {
                             {`TOTAL ${total} USD`}
                         </div>
                         <div>
-                            <button>
+                            <button onClick={() => this.deleteAll()}>
                                 Checkout 
                             </button>
                         </div>

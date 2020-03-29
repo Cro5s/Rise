@@ -9,8 +9,13 @@ import { login } from "../../actions/session_actions";
 
 const mapStateToProps = (state = {}, ownProps) => {
   const id = ownProps.match.params.id;
-  const currentUserId = state.session.user.id || "5e767c7f3e2ba776279b1af0";
-  const cartItem = state.cartItems || {};
+  let currentUserId;
+  if (state.session.isAuthenticated) {
+    currentUserId = state.session.user.id;
+  } else {
+    currentUserId = "5e767c7f3e2ba776279b1af0";
+  }
+  const cartItem = state.cart_items || {};
 
   return {
     product: state.products,
