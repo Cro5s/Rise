@@ -3,3 +3,4 @@ keys.js
 keys_dev.js
 *.DS_Store
 credentials.json
+.DS_Store
