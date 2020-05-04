@@ -11,16 +11,16 @@ class ProductShow extends React.Component {
       quantity: 0,
       size: "",
       currentUserId: this.props.currentUserId,
-      cartItem: this.props.cartItem,
+      cartItem: this.props.cartItem
     };
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchProduct(this.props.id)
-  
+    this.props.fetchProduct(this.props.id);
+    
     if (this.state.product) {
-      this.setState({ isLoaded: true })
+      this.setState({ isLoaded: true });
     };
     
   }
@@ -32,7 +32,7 @@ class ProductShow extends React.Component {
   handleAddCartItem() {
     let count = this.state.quantity + 1;
     let cartItem;
-    
+
     if (count === 1) {
       cartItem = {
         product_id: this.props.product._id,
@@ -51,7 +51,6 @@ class ProductShow extends React.Component {
       cartItem.size = this.state.size;
       this.props.updateCartItem(cartItem.user_id, cartItem);
     };
-    this.props.history.push("/cart_page");
   }
 
   render() {
@@ -113,13 +112,12 @@ class ProductShow extends React.Component {
                   </ul> : <h3 className="sold-out">SOLD OUT</h3>
                 }
               </div>
-              <p 
-                className="selected-size"
-              >
+              <p className="selected-size">
                 My size is {this.state.size} 
               </p>
-              <button 
-                className="add-button" 
+              <button
+                id="addButton" 
+                className="add-button"
                 onClick={this.handleAddCartItem}
               >
                 ADD

@@ -3,20 +3,25 @@ import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/product_actions";
 import { 
   createCartItem, 
-  updateCartItem 
+  updateCartItem
 } from "../../actions/cart_item_actions";
 import { login } from "../../actions/session_actions";
 
 const mapStateToProps = (state = {}, ownProps) => {
   const id = ownProps.match.params.id;
-  const currentUserId = state.session.user.id || "5e767c7f3e2ba776279b1af0";
-  const cartItem = state.cartItems || {};
+  let currentUserId;
+  if (state.session.isAuthenticated) {
+    currentUserId = state.session.user.id;
+  } else {
+    currentUserId = "5e767c7f3e2ba776279b1af0";
+  }
+  const cartItem = state.cart_items || {};
 
   return {
     product: state.products,
     id,
     currentUserId,
-    cartItem,
+    cartItem
   };
 };
 

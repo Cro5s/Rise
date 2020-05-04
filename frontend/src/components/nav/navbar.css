@@ -11,10 +11,10 @@
 }
 
 .navbar-icon-container:hover .category-menu-navbar{
-    display: block;
-    background-color: white;
-    opacity: 1;
-    z-index: 1;
+  display: block;
+  background-color: white;
+  opacity: 1;
+  z-index: 1;
 }
 
 .category-menu-navbar {
@@ -102,9 +102,34 @@
 }
 
 .shopping-cart-icon {
-  font-size: 30px;
+  font-size: 36px;
   margin: 20px;
   padding-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 28%;
+  cursor: pointer;
+
+}
+
+.cart-count-10 {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  cursor: pointer;
 }
 
 /* Style the search box inside the navigation bar */
@@ -118,7 +143,4 @@
 
 .search-button {
   font-size: 24px;
-}
-.shopping-cart-count {
-  padding-left: 10px;
 }
