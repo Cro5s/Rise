@@ -173,11 +173,6 @@ class NavBar extends React.Component {
                 </Link>
               )}
             </div>
-            <div className="shopping-cart-count">
-              {this.state.cartItemCount !== 0
-                ? `(${this.state.cartItemCount})`
-                : 0}
-            </div>
             <div className="shopping-cart-icon" onClick={this.openCartPage}>
               <div className={selected}>{this.props.cartItemsLength}</div>
               <i className="fas fa-shopping-bag"></i>
