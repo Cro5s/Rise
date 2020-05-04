@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
+     this.handleDemo = this.handleDemo.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -44,6 +45,17 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user); 
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+
+    let user = {
+      email: "demo@demo.com",
+      password: "password"
+    };
+
+    this.props.login(user);
   }
 
   // Handle Register button which routes to Signup form
@@ -89,6 +101,7 @@ class LoginForm extends React.Component {
                 {this.renderErrors()}
               </div>
             </form>
+            <button className="login-button" onClick={this.handleDemo}>Demo</button>
           </div>
           <div className="login-form-register-section">
             <label className="login-form-register-label">REGISTER</label>
