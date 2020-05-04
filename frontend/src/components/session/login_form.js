@@ -101,7 +101,7 @@ class LoginForm extends React.Component {
                 {this.renderErrors()}
               </div>
             </form>
-            <button className="login-button" onClick={this.handleDemo}>Demo</button>
+            <button className="login-button-d" onClick={this.handleDemo}>Demo</button>
           </div>
           <div className="login-form-register-section">
             <label className="login-form-register-label">REGISTER</label>
