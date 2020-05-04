@@ -97,3 +97,7 @@ input:focus {
     letter-spacing: .2px;
     border: solid 2px black;
 }
+.login-errors {
+    padding-top: 20px;
+    font-size: large;
+}
