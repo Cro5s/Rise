@@ -19,6 +19,7 @@ class NavBar extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
+    search-bar.Attributes.Add("style", "display:none");
     this.props.history.push('/search')
   }
 
