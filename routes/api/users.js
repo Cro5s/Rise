@@ -47,7 +47,7 @@ router.post('/login', (req, res) => {
                         });
                     });
                 } else {
-                    errors.password = "Incorrect password";
+                    errors.password = "Invalid email/password";
                     return res.status(400).json(errors);
                 }
             });
