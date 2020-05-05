@@ -113,11 +113,11 @@ class ProductIndex extends React.Component {
     }
 
     return (
-      <>
+      <div className="main-div---index">
         {selectedTitle}
         <div className="products-index-div">
 
-          <ul className="products-index-ul">
+          <ul className="products-index-ul-left">
             {productsListsLeft}
           </ul>
           <ul className="products-index-ul--right">
@@ -125,7 +125,7 @@ class ProductIndex extends React.Component {
           </ul>
 
         </div>
-      </>
+      </div>
     )
   }
 }
