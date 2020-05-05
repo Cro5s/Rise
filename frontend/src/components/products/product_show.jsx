@@ -63,8 +63,11 @@ class ProductShow extends React.Component {
       );
 
     setTimeout(() => {
-      document.getElementById("success-msg").remove();
-    }, 3000);
+      let element = document.getElementById("success-msg");
+      if (element) {
+        element.remove();
+      }
+    }, 1500);
   }
 
   render() {

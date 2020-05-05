@@ -14,17 +14,20 @@ class CartPage extends React.Component {
     deleteAll() {
         const { cartItems } = this.props;
         cartItems.forEach(cartItem => {
-            this.props.deleteCartItem(cartItem._id);
+            this.props.deleteCartItem(cartItem._id).then(() => {
+                document.querySelector(".back-to-home").insertAdjacentHTML(
+                    "afterend",
+                    `<p id="o-c">Order Complete!</p>`
+                );
+
+                // setTimeout(() => {
+                //     let element = document.getElementById("o-c");
+                //     if (element) {
+                //         element.remove();
+                //     }
+                // }, 3000)
+            });
         })
-
-        // document.querySelector(".back-to-home").insertAdjacentHTML(
-        //         "afterend",
-        //         `<p id="o-c">Order Complete!</p>`
-        //     );
-
-        // setTimeout(() => {
-        //     document.getElementById("o-c").remove();
-        // }, 3000);
     }
 
     componentDidMount(){
@@ -109,7 +112,7 @@ class CartPage extends React.Component {
                             {`TOTAL ${total} USD`}
                         </div>
                         <div>
-                            <button onClick={() => this.deleteAll()}>
+                            <button className="checkout" onClick={() => this.deleteAll()}>
                                 Checkout 
                             </button>
                         </div>
