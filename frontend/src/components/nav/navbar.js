@@ -133,10 +133,10 @@ class NavBar extends React.Component {
                 onClick={this.handleSearch}
               >SEARCH  _________________</button>
           </div>
-          <div className="social-link">
-            <Link to="/Socials">Created By</Link>
-          </div>
           <div className="status-container">
+            <div className="social-link">
+              <Link to="/Socials">Created By </Link>
+            </div>
             <div className="login-status-container">
             { 
               this.props.loggedIn ? <h3 className="user-name">{currentUserName}</h3> : <Link className="login-link" to="/login">LOG IN</Link>
