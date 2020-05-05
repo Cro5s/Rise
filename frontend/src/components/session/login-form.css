@@ -9,9 +9,10 @@
     padding-top: 40px;
 }
 .login-form-flex-container {
-    display: flex;
-    flex-direction: row;
-    min-height: 425px;
+  display: flex;
+  flex-direction: row;
+  min-height: 425px;
+  height: 76vh;
 }
 .login-form-page {
     box-sizing: border-box;

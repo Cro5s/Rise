@@ -1,30 +1,31 @@
 .search-bar-main {
-    padding-left: 40px;
+  padding-left: 40px;
+  height: 80vh;
 }
 .search-bar-1 {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 20px;
-    /* border-bottom: solid 1px black; */
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  /* border-bottom: solid 1px black; */
 }
 .search-bar-1 li {
-    padding: 20px;
-    font-size: 20px;
+  padding: 20px;
+  font-size: 20px;
 }
 .search-close {
-    font-size: 30px;
-    height: 40px;
-    width: 40px;
-    padding-right: 30px;
-    color: gray;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  padding-right: 30px;
+  color: gray;
 }
 .search-input {
-    font-size: 20px;
+  font-size: 20px;
 }
 .search-link-list li {
-    font-size: 24px;
-    background-color: #eee;
-    height: 40px;
-    width: 100%;
-    padding-left: 30px;
+  font-size: 24px;
+  background-color: #eee;
+  height: 40px;
+  width: 100%;
+  padding-left: 30px;
 }
