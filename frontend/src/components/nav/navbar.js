@@ -168,11 +168,9 @@ class NavBar extends React.Component {
               {this.props.loggedIn ? (
                 <>
                   <h3 className="user-name">{currentUserName}</h3>
-                  {/* <div className="logout-div"> */}
                   <button className="logout-link" onClick={this.logoutUser}>
                     Logout
                   </button>
-                  {/* </div> */}
                 </>
               ) : (
                 <Link className="login-link" to="/login">
