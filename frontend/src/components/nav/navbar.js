@@ -19,12 +19,14 @@ class NavBar extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
-    this.props.history.push("/search");
+    document.getElementById("search-bar").style.display = "none";
+    this.props.history.push('/search')
   }
 
   openCartPage(e) {
     e.preventDefault();
-    this.props.history.push("/cart_page");
+    document.getElementById("search-bar").style.display = "block";
+    this.props.history.push('/cart_page');
   }
 
   componentDidMount() {
@@ -55,6 +57,9 @@ class NavBar extends React.Component {
           </div>
           <div className="category-menu-navbar">
             <nav className="navbar" role="navigation">
+              <div className="social-link">
+                <Link to="/Socials">Created By </Link>
+              </div>
               <ul className="category-menu">
                 <li className="category-menu-item-1">
                   <Link to="/woman" className="category-link-1">
@@ -144,11 +149,6 @@ class NavBar extends React.Component {
                   </ul>
                 </li>
               </ul>
-              {this.props.loggedIn ? (
-                <button className="logout-link" onClick={this.logoutUser}>
-                  Logout
-                </button>
-              ) : null}
             </nav>
           </div>
         </div>
@@ -158,10 +158,11 @@ class NavBar extends React.Component {
               <h1 className="logo">RISE</h1>
             </Link>
           </div>
-          <div className="search-bar">
-            <button className="search-button" onClick={this.handleSearch}>
-              SEARCH _________________
-            </button>
+          <div id="search-bar">
+              <button 
+                className="search-button"
+                onClick={this.handleSearch}
+              >SEARCH  _________________</button>
           </div>
           <div className="status-container">
             <div className="login-status-container">
@@ -174,7 +175,7 @@ class NavBar extends React.Component {
                 </>
               ) : (
                 <Link className="login-link" to="/login">
-                  LOG IN
+                  Login
                 </Link>
               )}
             </div>

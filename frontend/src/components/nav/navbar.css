@@ -22,7 +22,7 @@
   position: absolute;
   width: 260px;
   padding-left: 20px;
-  padding-top: 240px;
+  padding-top: 200px;
   padding-bottom: 560px;
   background-color: white;
 }
@@ -96,14 +96,16 @@
 }
 
 .login-link {
-  font-size: 16px;
-  padding-right: 10px;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
 }
 
 
 .logout-link {
   font-size: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 10px;
   margin-left: 10px;
 }
@@ -144,7 +146,7 @@
 }
 
 /* Style the search box inside the navigation bar */
-.search-bar input[type=text] {
+#search-bar input[type=text] {
   float: right;
   padding: 6px;
   border: none;
@@ -154,4 +156,11 @@
 
 .search-button {
   font-size: 24px;
+}
+
+.social-link {
+  padding-left: 20px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  font-size: 20px;
 }

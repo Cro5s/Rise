@@ -22,10 +22,10 @@
 .search-input {
   font-size: 20px;
 }
-.search-link-list li {
-  font-size: 24px;
-  background-color: #eee;
-  height: 40px;
-  width: 100%;
-  padding-left: 30px;
+#search-link-list li {
+    font-size: 24px;
+    background-color: #eee;
+    height: 40px;
+    width: 100%;
+    padding-left: 30px;
 }
