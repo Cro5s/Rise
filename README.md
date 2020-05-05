@@ -1,5 +1,5 @@
 # Rise
-A clone of Retail Site Zara
+Rise is a clothing brand site inspired by Zara. Users can browse categories between men, women, and children. From there they can choose specific articles of clothing to view, add to cart, and then checkout even without creating an account.
 
 [Live Site](https://rise-apparel.herokuapp.com/#/)
 
@@ -16,15 +16,12 @@ A clone of Retail Site Zara
 	CSS3
 	Heroku
 
-# Description
-Rise is a clothing brand site inspired by Zara. Users can browse categories between men, women, and children. From there they can choose specific articles of clothing to view, add to cart, and then checkout even without creating an account.
-
-# Project Team: 	
+# Project Team 	
 	  Jayasree Suryadevara
 	  Rapkat Amin
 	  Kadeem Jackson
 
-# Features: 	
+# Features 	
 	User Auth
 	Product Features
 	Categories
