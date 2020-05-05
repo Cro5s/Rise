@@ -57,6 +57,9 @@ class NavBar extends React.Component {
           </div>
           <div className="category-menu-navbar">
             <nav className="navbar" role="navigation">
+              <div className="social-link">
+                <Link to="/Socials">Created By </Link>
+              </div>
               <ul className="category-menu">
                 <li className="category-menu-item-1">
                   <Link to="/woman" className="category-link-1">
@@ -146,11 +149,6 @@ class NavBar extends React.Component {
                   </ul>
                 </li>
               </ul>
-              {this.props.loggedIn ? (
-                <button className="logout-link" onClick={this.logoutUser}>
-                  Logout
-                </button>
-              ) : null}
             </nav>
           </div>
         </div>
@@ -167,9 +165,6 @@ class NavBar extends React.Component {
               >SEARCH  _________________</button>
           </div>
           <div className="status-container">
-            <div className="social-link">
-              <Link to="/Socials">Created By </Link>
-            </div>
             <div className="login-status-container">
               {this.props.loggedIn ? (
                 <>
@@ -180,7 +175,7 @@ class NavBar extends React.Component {
                 </>
               ) : (
                 <Link className="login-link" to="/login">
-                  LOG IN
+                  Login
                 </Link>
               )}
             </div>
