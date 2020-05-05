@@ -5,7 +5,7 @@ Rise is a clothing brand site inspired by Zara. Users can browse categories betw
 
 ![Rise](https://github.com/Cro5s/Rise/blob/master/frontend/public/Rise.png)
 
-# Technology Used:
+# Technology Used
 	MongoDB
 	Express
 	React
