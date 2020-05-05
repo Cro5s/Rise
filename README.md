@@ -1,11 +1,17 @@
 # Rise
 A clone of Retail Site Zara
 
-# Project agreed on: 
-  Zara Mobile Version
-  
-# Theme: 
-  Environmentally Friendly Products
+[Live Site](https://rise-apparel.herokuapp.com/#/)
+
+![Rise](https://github.com/Cro5s/Rise/blob/master/frontend/public/Rise.png)
+
+# Technology Used:
+	  MongoDB
+	  Express
+	  React
+	  Node.js
+	  AWS to host our images
+
 # Name of the App: 
      Rise
 
@@ -30,14 +36,3 @@ A clone of Retail Site Zara
 	  Bonus: Swiping through the feature photos
 	  Bonus: Search bar that finds products based on categories searched
 	  Bonus: User profile
-	  
-# Technology Used:
-	  MongoDB
-	  Express
-	  React
-	  Node.js
-	  AWS to host our images
-
-# Backup Ideas:
-	Nextdoor
-		
