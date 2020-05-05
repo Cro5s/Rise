@@ -84,6 +84,11 @@
   
 }
 
+.login-status-container {
+  display: flex;
+  align-items: baseline;
+}
+
 .user-name {
   font-weight: lighter;
   font-size: 16px;
@@ -95,10 +100,16 @@
   padding-right: 10px;
 }
 
+
 .logout-link {
   font-size: 20px;
   padding-top: 20px;
   padding-left: 10px;
+  margin-left: 10px;
+}
+
+.logout-link:hover {
+  color: red;
 }
 
 .shopping-cart-icon {
