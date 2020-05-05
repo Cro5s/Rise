@@ -133,7 +133,7 @@
 }
 
 /* Style the search box inside the navigation bar */
-.search-bar input[type=text] {
+#search-bar input[type=text] {
   float: right;
   padding: 6px;
   border: none;

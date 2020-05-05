@@ -16,20 +16,9 @@ class SearchBar extends React.Component{
         this.getLink = this.getLink.bind(this);
     }
 
-    componentDidMount() {
-        // this.setState({
-        //     filtered: this.props.list
-        // });
-    }
-
-    componentWillReceiveProps(nextProps) {
-        // this.setState({
-        //     filtered: nextProps.list
-        // });
-    }
-
     closeSearchPage(e) {
         e.preventDefault();
+        document.getElementById("search-bar").style.display = "block";
         this.props.history.push('/');
     }
 
