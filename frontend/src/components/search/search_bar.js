@@ -16,20 +16,9 @@ class SearchBar extends React.Component{
         this.getLink = this.getLink.bind(this);
     }
 
-    componentDidMount() {
-        // this.setState({
-        //     filtered: this.props.list
-        // });
-    }
-
-    componentWillReceiveProps(nextProps) {
-        // this.setState({
-        //     filtered: nextProps.list
-        // });
-    }
-
     closeSearchPage(e) {
         e.preventDefault();
+        document.getElementById("search-bar").style.display = "block";
         this.props.history.push('/');
     }
 
@@ -63,6 +52,12 @@ class SearchBar extends React.Component{
         route = searchStrWords.map(word => {
             return route += "/" +  word.toLowerCase();
         })
+        // Add event Listener to set display of Search Bar to true
+        document.getElementById("search-link-list").addEventListener("click", function (e) {
+            if (e.target) {
+                document.getElementById("search-bar").style.display = "block";
+            }
+        });
         return <Link to={route[1]} >{listItem.toString()}</Link>;
     }
     
@@ -83,7 +78,7 @@ class SearchBar extends React.Component{
                 </div>
                 <br />
                 <br />
-                <ul className="search-link-list">
+                <ul id="search-link-list">
                     {this.state.filtered.map(item => (
                         <li key={item}>
                             {/* {item} */}

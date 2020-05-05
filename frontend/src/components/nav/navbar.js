@@ -19,12 +19,14 @@ class NavBar extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
-    this.props.history.push("/search");
+    document.getElementById("search-bar").style.display = "none";
+    this.props.history.push('/search')
   }
 
   openCartPage(e) {
     e.preventDefault();
-    this.props.history.push("/cart_page");
+    document.getElementById("search-bar").style.display = "block";
+    this.props.history.push('/cart_page');
   }
 
   componentDidMount() {
@@ -158,12 +160,16 @@ class NavBar extends React.Component {
               <h1 className="logo">RISE</h1>
             </Link>
           </div>
-          <div className="search-bar">
-            <button className="search-button" onClick={this.handleSearch}>
-              SEARCH _________________
-            </button>
+          <div id="search-bar">
+              <button 
+                className="search-button"
+                onClick={this.handleSearch}
+              >SEARCH  _________________</button>
           </div>
           <div className="status-container">
+            <div className="social-link">
+              <Link to="/Socials">Created By </Link>
+            </div>
             <div className="login-status-container">
               {this.props.loggedIn ? (
                 <>
