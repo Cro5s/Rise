@@ -1,93 +1,78 @@
-.products-index-div {
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 10px;
-    min-width: 1040px;
+.main-div---index {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     /* border: 1px solid red; */
+}
+
+.products-index-div {
+    margin-top: 30px;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+
+    /* border: 3px solid red; */
     /* padding: 5px; */
 }
 
-.category-name-div {
-    margin-left: 50px;
-    margin-right: 50px;
-    min-width: 1040px;
-    display: flex;
-    justify-content: center;
-
-    /* border: 1px solid green; */
-}
-
 .category--name {
-    font-size: 60px;
+    font-size: 3vw;
     text-transform: capitalize;
     font-weight: 700;
-
 }
 
-.products-index-ul {
-    min-width: 520px;
-    max-width: 520px;
-    display: flex;
+.products-index-ul-left {
+    width: 49%;
     flex-direction: column;
-    padding-left: 10px;
-    padding-right: 10px;
+    display: flex;
 
-    /* border: 1px solid purple; */
+    /* border: 3px solid purple; */
     /* padding: 5px; */
 }
 
 .products-index-ul--right {
-    min-width: 520px;
-    max-width: 520px;
+    width: 49%;
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
 
-    /* border: 1px solid yellow; */
+    /* border: 3px solid green; */
     /* padding: 5px; */
 }
 
 .products-index-product-div {
-    min-width: 510px;
-    max-width: 510px;
-    min-height: 900px;
-    max-height: 900px;
-
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 
-    /* border: 1px solid green; */
+    /* border: 5px solid maroon; */
     /* padding: 5px; */
 }
 
 .products--index--img-div {
-    min-width: 500px;
-    max-width: 500px;
-    min-height: 800px;
-    max-height: 800px;
     padding-bottom: 20px;
-
     display: flex;
     flex-direction: column;
 
     /* border: 1px solid red; */
 }
 
-.products-index-img {
-    min-width: 500px;
+/* .products-index-img { */
+    /* min-width: 500px;
     max-width: 500px;
     min-height: 800px;
-    max-height: 800px;
+    max-height: 800px; */
+    /* width: 40vw;
+    height: 50vw; */
 
     /* background-size: cover;
     background-position: center; */
 
     /* padding-bottom: 20px; */
-}
+/* } */
 
 .product--name:hover {
     text-decoration: underline;
