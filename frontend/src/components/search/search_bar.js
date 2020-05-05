@@ -50,6 +50,7 @@ class SearchBar extends React.Component{
         const searchStrWords = listItem.split(" ");
         let route =""
         route = searchStrWords.map(word => {
+            if (word === "Tops") word = "shirts";
             return route += "/" +  word.toLowerCase();
         })
         // Add event Listener to set display of Search Bar to true

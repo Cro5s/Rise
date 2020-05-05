@@ -4,7 +4,7 @@ import SearchBar from './search_bar';
 const mapStateToProps = state => {
     const searchList = [
         "Woman Jackets",
-        "Woman Shirts",
+        "Woman Tops",
         "Woman Pants",
         "Woman Shoes",
         "Men Jackets",
