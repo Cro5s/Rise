@@ -5,24 +5,23 @@ import "./product_show.css";
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      product: this.props.product, 
+    this.state = {
+      product: this.props.product,
       isLoaded: false,
       quantity: 0,
       size: "",
       currentUserId: this.props.currentUserId,
-      cartItem: this.props.cartItem
+      cartItem: this.props.cartItem,
     };
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.props.id);
-    
+
     if (this.state.product) {
       this.setState({ isLoaded: true });
-    };
-    
+    }
   }
 
   update(size) {
@@ -41,7 +40,7 @@ class ProductShow extends React.Component {
         quantity: count,
         size: this.state.size,
         image: this.props.product.images[0],
-        price: this.props.product.price
+        price: this.props.product.price,
       };
 
       this.props.createCartItem(cartItem.user_id, cartItem);
@@ -50,21 +49,39 @@ class ProductShow extends React.Component {
       cartItem.quantity = count;
       cartItem.size = this.state.size;
       this.props.updateCartItem(cartItem.user_id, cartItem);
-    };
+    }
+
+    this.setSuccessMsg();
+  }
+
+  setSuccessMsg() {
+    document
+      .getElementById("addButton")
+      .insertAdjacentHTML(
+        "afterend",
+        `<p id="success-msg">Item Added To Cart!</p>`
+      );
+
+    setTimeout(() => {
+      let element = document.getElementById("success-msg");
+      if (element) {
+        element.remove();
+      }
+    }, 1500);
   }
 
   render() {
     if (this.state.product === {}) return null;
 
-    let { 
-      product_name, 
-      quantity, 
-      size, 
-      price, 
-      description, 
-      images
+    let {
+      product_name,
+      quantity,
+      size,
+      price,
+      description,
+      images,
     } = this.props.product;
-    
+
     if (images === undefined) images = [];
     if (price) price = price.toFixed(2);
 
@@ -73,15 +90,13 @@ class ProductShow extends React.Component {
         <div className="main-container">
           <div className="left-container">
             <ul className="product-images">
-              {
-                images.map((image, idx) => {
-                  return (
-                    <li className="image" key={idx}>
-                      <img alt={product_name} src={image}/>
-                    </li>
-                  );
-                })
-              }
+              {images.map((image, idx) => {
+                return (
+                  <li className="image" key={idx}>
+                    <img alt={product_name} src={image} />
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="right-container">
@@ -93,30 +108,28 @@ class ProductShow extends React.Component {
             <div className="description">{description}</div>
             <div className="cart-form">
               <div className="quantity">
-                {
-                  quantity > 0 ? <ul className="sizes">
-                    {
-                      size.map((s, idx) => {
-                        return (
-                          <li 
-                            className="size" 
-                            key={idx} 
-                            value={s}
-                            onClick={() => this.update(s)}
-                          >
-                            {s}
-                          </li>
-                        );
-                      })
-                    }
-                  </ul> : <h3 className="sold-out">SOLD OUT</h3>
-                }
+                {quantity > 0 ? (
+                  <ul className="sizes">
+                    {size.map((s, idx) => {
+                      return (
+                        <li
+                          className="size"
+                          key={idx}
+                          value={s}
+                          onClick={() => this.update(s)}
+                        >
+                          {s}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <h3 className="sold-out">SOLD OUT</h3>
+                )}
               </div>
-              <p className="selected-size">
-                My size is {this.state.size} 
-              </p>
+              <p className="selected-size">My size is {this.state.size}</p>
               <button
-                id="addButton" 
+                id="addButton"
                 className="add-button"
                 onClick={this.handleAddCartItem}
               >
@@ -127,9 +140,7 @@ class ProductShow extends React.Component {
         </div>
       );
     } else {
-      return (
-        <h4 className="loading">Loading...</h4>
-      )
+      return <h4 className="loading">Loading...</h4>;
     }
   }
 }

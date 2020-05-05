@@ -14,7 +14,19 @@ class CartPage extends React.Component {
     deleteAll() {
         const { cartItems } = this.props;
         cartItems.forEach(cartItem => {
-            this.props.deleteCartItem(cartItem._id);
+            this.props.deleteCartItem(cartItem._id).then(() => {
+                document.querySelector(".back-to-home").insertAdjacentHTML(
+                    "afterend",
+                    `<p id="o-c">Order Complete!</p>`
+                );
+
+                // setTimeout(() => {
+                //     let element = document.getElementById("o-c");
+                //     if (element) {
+                //         element.remove();
+                //     }
+                // }, 3000)
+            });
         })
     }
 
@@ -35,7 +47,7 @@ class CartPage extends React.Component {
             return (
                 <div className="empty-mesg">
                     <h2>Your cart is empty.</h2>
-                    <div className="back-to-home ">
+                    <div className="back-to-home">
                         <Link to="/" className="cart-link" >Discover some items to fill it up</Link>
                     </div>
                 </div>
@@ -100,7 +112,7 @@ class CartPage extends React.Component {
                             {`TOTAL ${total} USD`}
                         </div>
                         <div>
-                            <button onClick={() => this.deleteAll()}>
+                            <button className="checkout" onClick={() => this.deleteAll()}>
                                 Checkout 
                             </button>
                         </div>
