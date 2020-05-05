@@ -20,12 +20,12 @@ class CartPage extends React.Component {
                     `<p id="o-c">Order Complete!</p>`
                 );
 
-                // setTimeout(() => {
-                //     let element = document.getElementById("o-c");
-                //     if (element) {
-                //         element.remove();
-                //     }
-                // }, 3000)
+                setTimeout(() => {
+                    let element = document.getElementById("o-c");
+                    if (element) {
+                        element.remove();
+                    }
+                }, 3000)
             });
         })
     }
