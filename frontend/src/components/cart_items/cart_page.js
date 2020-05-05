@@ -16,6 +16,15 @@ class CartPage extends React.Component {
         cartItems.forEach(cartItem => {
             this.props.deleteCartItem(cartItem._id);
         })
+
+        // document.querySelector(".back-to-home").insertAdjacentHTML(
+        //         "afterend",
+        //         `<p id="o-c">Order Complete!</p>`
+        //     );
+
+        // setTimeout(() => {
+        //     document.getElementById("o-c").remove();
+        // }, 3000);
     }
 
     componentDidMount(){
@@ -35,7 +44,7 @@ class CartPage extends React.Component {
             return (
                 <div className="empty-mesg">
                     <h2>Your cart is empty.</h2>
-                    <div className="back-to-home ">
+                    <div className="back-to-home">
                         <Link to="/" className="cart-link" >Discover some items to fill it up</Link>
                     </div>
                 </div>
