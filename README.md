@@ -1,38 +1,28 @@
 # Rise
-A clone of Retail Site Zara
+Rise is a clothing brand site inspired by Zara. Users can browse categories between men, women, and children. From there they can choose specific articles of clothing to view, add to cart, and then checkout even without creating an account.
 
-[Live Site](https://rise-apparel.herokuapp.com/#/)
+[Live Site](https://rise-apparel.herokuapp.com)
 
 ![Rise](https://github.com/Cro5s/Rise/blob/master/frontend/public/Rise.png)
 
-# Technology Used:
-	  MongoDB
-	  Express
-	  React
-	  Node.js
-	  AWS to host our images
+# Technology Used
+	MongoDB
+	Express
+	React
+	Node.js
+	AWS S3
+	Mongoose 
+	HTML5 
+	CSS3
+	Heroku
 
-# Name of the App: 
-     Rise
-
-# Project Team: 	
+# Project Team 	
 	  Jayasree Suryadevara
-	  Kadeem Jackson
 	  Rapkat Amin
+	  Kadeem Jackson
 
-# Features: 	
+# Features 	
 	User Auth
 	Product Features
 	Categories
 	Shopping Cart
-
-# Description
-	  User can browse through the site without logging in 
-	  Homepage has image-links to the main categories: Men/Woman/Kids
-	  Navbar to each category enables when hover over menu icon.
-	  Guest login for all features
-	  Shopping cart created mapped to the session and closed when the session closes
-
-	  Bonus: Swiping through the feature photos
-	  Bonus: Search bar that finds products based on categories searched
-	  Bonus: User profile
