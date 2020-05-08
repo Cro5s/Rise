@@ -14,20 +14,37 @@ class CartPage extends React.Component {
     deleteAll() {
         const { cartItems } = this.props;
         cartItems.forEach(cartItem => {
-            this.props.deleteCartItem(cartItem._id).then(() => {
-                document.querySelector(".back-to-home").insertAdjacentHTML(
-                    "afterend",
-                    `<p id="o-c">Order Complete!</p>`
-                );
+            this.props.deleteCartItem(cartItem._id)
+            // .then(() => {
+            //         // if (document.querySelector("body")) {
+            //             document.querySelector("body").insertAdjacentHTML(
+            //                 "afterend",
+            //                 `<p id="o-c">Order Complete!</p>`
+            //             );
+            //         // }
 
-                setTimeout(() => {
-                    let element = document.getElementById("o-c");
-                    if (element) {
-                        element.remove();
-                    }
-                }, 3000)
-            });
+            //         setTimeout(() => {
+            //             let element = document.getElementById("o-c");
+            //             if (element) {
+            //                 element.remove();
+            //             }
+            //         }, 3000)
+            // });
         })
+        // debugger;
+        if (!cartItems.length) {
+             document.querySelector("body").insertAdjacentHTML(
+                "afterend",
+                `<p id="o-c">Order Complete!</p>`
+             );
+
+             setTimeout(() => {
+                 let element = document.getElementById("o-c");
+                 if (element) {
+                     element.remove();
+                 }
+             }, 3000)
+        }
     }
 
     componentDidMount(){

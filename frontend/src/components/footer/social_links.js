@@ -11,11 +11,11 @@ const SocialLinks = () => {
                 <div>
                     <a href="https://www.linkedin.com/in/jayasree-suryadevara-98066415/" 
                         target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-linkedin fa-4x"></i>
+                        <i className="fab fa-linkedin fa-3x"></i>
                     </a>
                     <a href="https://github.com/JayasreeSuryadevara" 
                         target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-github fa-4x"></i>
+                        <i className="fab fa-github fa-3x"></i>
                     </a>
                 </div>
                 <br />
@@ -23,11 +23,11 @@ const SocialLinks = () => {
                 <div>
                     <a href="https://www.linkedin.com/in/kadeem-jackson-4349348a/" 
                         target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-linkedin fa-4x"></i>
+                        <i className="fab fa-linkedin fa-3x"></i>
                     </a>
                     <a href="https://github.com/Cro5s" 
                         target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-github fa-4x"></i>
+                        <i className="fab fa-github fa-3x"></i>
                     </a>
                 </div>
                 <br />
@@ -35,11 +35,11 @@ const SocialLinks = () => {
                 <div>
                     <a href="https://www.linkedin.com/in/rapkat-amin-33b82b1a4/" 
                         target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-linkedin fa-4x"></i>
+                        <i className="fab fa-linkedin fa-3x"></i>
                     </a>
                     <a href="https://github.com/rapkat10" target="_blank" 
                         rel="noopener noreferrer">
-                        <i className="fab fa-github fa-4x"></i>
+                        <i className="fab fa-github fa-3x"></i>
                     </a>
                 </div>
             </div>

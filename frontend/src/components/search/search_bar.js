@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './search.css';
+import close from './image/close.png';
 
 class SearchBar extends React.Component{
 
@@ -40,10 +41,16 @@ class SearchBar extends React.Component{
             // If the search bar is empty, set newList to original task list
             newList = this.props.list;
         }
-        // Set the filtered state based on what our rules added to newList
+
         this.setState({
             filtered: newList
         });
+        
+        if (!newList.length) {
+            this.setState({
+                filtered: ["No Results Found"]
+            });
+        }
     }
 
     getLink(listItem) {
@@ -74,7 +81,10 @@ class SearchBar extends React.Component{
                     <button 
                         className="search-close"
                         onClick={this.closeSearchPage}
-                    > <i className="far fa-window-close fa-2x"></i> </button>
+                    > 
+                        {/* <i className="far fa-window-close fa-2x"></i> */}
+                        <img className="close-img" src={close} ></img>
+                    </button>
                 </div>
                 <br />
                 <br />

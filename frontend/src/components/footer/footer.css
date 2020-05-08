@@ -16,7 +16,8 @@
 }
 
 .socials-page {
-    display: block;
+    display: flex;
+    justify-content: center;
     font-size: large;
     align-items: center;
     padding-left: 100px;
@@ -24,10 +25,7 @@
     padding-top: 60px;
 }
 .social-page-items {
-    background-color: #eee;
-    padding-left: 200px;
-    padding-bottom: 60px;
-    padding-top: 40px;
+    padding: 50px;
     max-width: 860px;
     font-family: Neue-Helvetica, Helvetica, Arial, sans-serif;
     font-size: 0.8em;

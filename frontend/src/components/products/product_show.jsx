@@ -43,23 +43,30 @@ class ProductShow extends React.Component {
         price: this.props.product.price,
       };
 
-      this.props.createCartItem(cartItem.user_id, cartItem);
+      if (this.state.size !== "") {
+        this.props.createCartItem(cartItem.user_id, cartItem);
+      } else {
+        this.setMsg("Please choose a size!");
+      }
     } else {
       cartItem = this.state.cartItem;
       cartItem.quantity = count;
       cartItem.size = this.state.size;
-      this.props.updateCartItem(cartItem.user_id, cartItem);
+      if (this.state.size !== "") {
+        this.props.updateCartItem(cartItem.user_id, cartItem);
+      } else {
+        this.setMsg("Please choose a size!");
+      }
     }
-
-    this.setSuccessMsg();
+    if (this.state.size !== "") this.setMsg("Item Added To Cart!");
   }
 
-  setSuccessMsg() {
+  setMsg(msg) {
     document
       .getElementById("addButton")
       .insertAdjacentHTML(
         "afterend",
-        `<p id="success-msg">Item Added To Cart!</p>`
+        `<p id="success-msg">${msg}</p>`
       );
 
     setTimeout(() => {
