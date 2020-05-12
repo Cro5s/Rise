@@ -22,6 +22,9 @@
     font-size: large;
     background-color: lightgrey;
     text-align: center;
+
+    height: 80vh;
+    overflow: auto;
 }
 .social-page-items {
     padding: 50px;
