@@ -5,7 +5,7 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <div>
+        <div className="footer-div">
             <footer className="main-page-footer">
                 {/* Copyright &copy; 2020 Rise */}
                 <div className="footer-link-1">

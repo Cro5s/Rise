@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     padding-top: 10px;
+    font-family: Helvetica;
 }
 .footer-link-1 {
     padding-left: 30px;
@@ -19,15 +20,13 @@
     display: flex;
     justify-content: center;
     font-size: large;
-    align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 60px;
+    background-color: lightgrey;
 }
 .social-page-items {
     padding: 50px;
+    padding-left: 250px;
     max-width: 860px;
-    font-family: Neue-Helvetica, Helvetica, Arial, sans-serif;
+    font-family: Helvetica;
     font-size: 0.8em;
 }
 .social-page-items h1 {
@@ -41,8 +40,7 @@
 }
 
 .social-page-items a {
-    padding: 10px;
-    padding-left: 100px;
+    padding-left: 65px;
     cursor: pointer;
     color: rgb(35, 35, 109);
 }

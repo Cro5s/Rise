@@ -1,6 +1,7 @@
 .nav-bar-container {
   display: flex;
   align-items: center;
+  font-family: Helvetica;
 }
 
 .navbar-icon {
@@ -75,7 +76,7 @@
 
 .logo {
   font-size: 90px !important;
-  
+  font-family: none;
 }
 
 .status-container {
