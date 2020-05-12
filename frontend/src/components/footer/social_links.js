@@ -8,7 +8,7 @@ const SocialLinks = () => {
             <div className="social-page-items">
                 <h1> Created By </h1>
                 <p> Jayasree Suryadevara </p>
-                <div>
+                <div className="social-link--div">
                     <a href="https://www.linkedin.com/in/jayasree-suryadevara-98066415/" 
                         target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-linkedin fa-3x"></i>
@@ -20,7 +20,7 @@ const SocialLinks = () => {
                 </div>
                 <br />
                 <p> Kadeem Jackson </p>
-                <div>
+                <div className="social-link--div">
                     <a href="https://www.linkedin.com/in/kadeem-jackson-4349348a/" 
                         target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-linkedin fa-3x"></i>
@@ -32,7 +32,7 @@ const SocialLinks = () => {
                 </div>
                 <br />
                 <p> Rapkat Amin </p>
-                <div>
+                <div className="social-link--div">
                     <a href="https://www.linkedin.com/in/rapkat-amin-33b82b1a4/" 
                         target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-linkedin fa-3x"></i>

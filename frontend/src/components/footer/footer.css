@@ -21,16 +21,15 @@
     justify-content: center;
     font-size: large;
     background-color: lightgrey;
+    text-align: center;
 }
 .social-page-items {
     padding: 50px;
-    padding-left: 250px;
     max-width: 860px;
     font-family: Helvetica;
     font-size: 0.8em;
 }
 .social-page-items h1 {
-    padding-left: 40px;
     font-size: 40px;
     font-weight: 700;
 }
@@ -39,9 +38,11 @@
     font-size: 40px;
 }
 
-.social-page-items a {
-    padding-left: 65px;
+.social-link--div {
     cursor: pointer;
     color: rgb(35, 35, 109);
 }
 
+.social-link--div a:last-of-type {
+    padding-left: 60px;
+}
